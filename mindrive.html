@@ -56,28 +56,85 @@
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
         }
 
-        .screenshots {
+        .content-wrapper {
             max-width: 1200px;
-            margin: 4rem auto;
+            margin: 0 auto;
             padding: 2rem;
+        }
+
+        .info-section {
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .screenshots {
+            margin: 2rem auto 3rem;
+            padding: 0 2rem;
         }
 
         .screenshots h2 {
             text-align: center;
             font-size: 2rem;
             font-weight: 300;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             letter-spacing: 2px;
         }
 
         .screenshot-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .screenshot-grid img {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.7;
         }
 
         .screenshot-placeholder {
@@ -170,8 +227,21 @@
         <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
             Currently in beta - Click above to become a tester and download from Google Play
         </p>
-        
-        <div style="margin-top: 2rem; max-width: 600px; text-align: left;">
+    </div>
+
+    <div class="content-wrapper">
+        <div class="screenshots">
+            <h2>Screenshots</h2>
+            <p style="text-align: center; opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.9rem;">Click to enlarge</p>
+            <div class="screenshot-grid">
+                <img src="Images/Screenshot_20251120_214228.jpg" alt="Mindrive Screenshot 1" onclick="openLightbox(this.src)">
+                <img src="Images/Screenshot_20251120_214245.jpg" alt="Mindrive Screenshot 2" onclick="openLightbox(this.src)">
+                <img src="Images/Screenshot_20251120_214254.jpg" alt="Mindrive Screenshot 3" onclick="openLightbox(this.src)">
+                <img src="Images/Screenshot_20251120_221254.jpg" alt="Mindrive Screenshot 4" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+
+        <div class="info-section">
             <h3 style="margin-bottom: 1rem; text-align: center;">What is Mindrive?</h3>
             <p style="opacity: 0.9; line-height: 1.8;">
                 Mindrive generates binaural beats - an auditory phenomenon that occurs when two different frequencies 
@@ -194,14 +264,10 @@
         </div>
     </div>
 
-    <div class="screenshots">
-        <h2>Screenshots</h2>
-        <div class="screenshot-grid">
-            <img src="Images/Screenshot_20251120_214228.jpg" alt="Mindrive Screenshot 1">
-            <img src="Images/Screenshot_20251120_214245.jpg" alt="Mindrive Screenshot 2">
-            <img src="Images/Screenshot_20251120_214254.jpg" alt="Mindrive Screenshot 3">
-            <img src="Images/Screenshot_20251120_221254.jpg" alt="Mindrive Screenshot 4">
-        </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
 
     <div class="back-link">
@@ -212,11 +278,22 @@
         <p>&copy; 2024 Houdacai. All rights reserved.</p>
     </div>
 
-    <!-- Instructions for adding your screenshots:
-    Replace the placeholder divs with img tags like this:
-    <img src="screenshot1.png" alt="Mindrive Screenshot 1">
-    
-    Just upload your screenshot images to the website folder and update the paths above.
-    -->
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html>
