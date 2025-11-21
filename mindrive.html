@@ -13,7 +13,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: #000000;
+            background: #000000 url('Images/Space/Nebula1.png') center center fixed;
+            background-size: cover;
             color: #ffffff;
             line-height: 1.6;
         }
@@ -21,7 +22,11 @@
         .header {
             text-align: center;
             padding: 3rem 2rem;
-            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 15px;
         }
 
         .header h1 {
@@ -57,19 +62,27 @@
         }
 
         .content-wrapper {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem 2rem;
         }
 
         .info-section {
             margin: 2rem auto;
-            max-width: 800px;
+            max-width: 900px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
         }
 
         .screenshots {
-            margin: 2rem auto 3rem;
-            padding: 0 2rem;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            max-width: 900px;
         }
 
         .screenshots h2 {
