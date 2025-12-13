@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>`n    <script src="auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florence - Renaissance Masterpiece | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .florence-header {
+            background: linear-gradient(135deg, var(--florence-color) 0%, #e67e22 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-info {
+            padding: 25px;
+        }
+        
+        .hotel-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--florence-color);
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--florence-color);
+            margin: 10px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .hotel-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .hotel-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .hotel-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--florence-color);
+            font-weight: 700;
+        }
+        
+        .activity-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--florence-color);
+        }
+        
+        .activity-card h4 {
+            color: var(--florence-color);
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .activity-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .activity-details {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .activity-details strong {
+            color: var(--florence-color);
+        }
+        
+        .restaurant-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--florence-color);
+        }
+        
+        .restaurant-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--florence-color);
+        }
+        
+        .restaurant-type {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .menu-highlights {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="florence-header">
+        <div class="container">
+            <h1>🎨 Florence - Firenze</h1>
+            <p class="tagline">Renaissance Masterpiece | 3 Nights, June 26-28, 2026</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Image -->
+        <section style="margin: 40px 0;">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&h=500&fit=crop" 
+                 alt="Florence Duomo and Skyline" 
+                 style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </section>
+
+        <!-- Quick Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+            <h2 style="color: var(--florence-color);">Why Florence?</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                Florence is where the Renaissance was born. This compact, walkable city cradles more artistic treasures per square mile than anywhere on Earth. Michelangelo's David, Brunelleschi's dome, Botticelli's Birth of Venus, da Vinci's genius - they all call Florence home. Beyond the art, there's the food (bistecca fiorentina!), the wine (Chianti country!), and the lifestyle (gelato twice a day is mandatory). This is Italy at its most cultured, most beautiful, most delicious.
+            </p>
+        </section>
+
+        <!-- Hotels Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🏨 Where to Stay in Florence</h2>
+            
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=400&fit=crop" alt="Hotel Cestelli">
+                <div class="hotel-info">
+                    <h3>⭐ Hotel Cestelli - BEST BUDGET PICK</h3>
+                    <p class="restaurant-type">Budget-Friendly • Centro Storico</p>
+                    <p class="price">€90-130/night</p>
+                    <p class="price-note">≈ $270-390 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Perfect central location near Ponte Vecchio</li>
+                        <li>5-minute walk to Duomo</li>
+                        <li>Clean, simple, friendly family-run hotel</li>
+                        <li>Some rooms with Arno River views</li>
+                        <li>AC and WiFi included</li>
+                        <li>Outstanding value for the location</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Why we love it:</strong> You're in the absolute heart of Florence for a fraction of what other hotels charge. No fancy amenities, but who cares when you're steps from everything? Save money here and spend it on Uffizi tickets and Chianti wine!
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Book on Booking.com →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&h=400&fit=crop" alt="Hotel Fiorino">
+                <div class="hotel-info">
+                    <h3>Hotel Fiorino</h3>
+                    <p class="restaurant-type">Mid-Range • Near Santa Maria Novella</p>
+                    <p class="price">€110-150/night</p>
+                    <p class="price-note">≈ $330-450 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>3-minute walk from train station (easy luggage transfer!)</li>
+                        <li>10-minute walk to Duomo</li>
+                        <li>Rooftop terrace with Florence views</li>
+                        <li>Breakfast included</li>
+                        <li>Recently renovated rooms</li>
+                        <li>Great for train travelers</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Perfect for:</strong> Easy arrival/departure since it's so close to the station. The rooftop terrace is a hidden gem for evening wine. Still walkable to everything but in a quieter area than the Duomo zone.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">See Prices →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=400&fit=crop" alt="Hotel Davanzati">
+                <div class="hotel-info">
+                    <h3>Hotel Davanzati</h3>
+                    <p class="restaurant-type">Boutique • Centro Storico</p>
+                    <p class="price">€130-170/night</p>
+                    <p class="price-note">≈ $390-510 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Historic building in the heart of Florence</li>
+                        <li>Walking distance to all major sights</li>
+                        <li>Charming Tuscan-style rooms</li>
+                        <li>Rooftop terrace with Duomo views</li>
+                        <li>Breakfast buffet included</li>
+                        <li>Personal service, helpful staff</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Good mid-range option:</strong> A step up in comfort without the luxury price tag. The rooftop terrace view of the Duomo is worth the slight increase in price. Book early for best rates.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Check Availability →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do Section -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">🗺️ Things to Do in Florence</h2>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🗿 Accademia Gallery - David</h4>
+                        <p>Home of Michelangelo's David. Standing before this 17-foot marble masterpiece is genuinely moving - the detail, the power, the emotion. Worth every penny and every minute in line. Book timed entry weeks ahead!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €12-16<br>
+                            <strong>Hours:</strong> Tue-Sun 8:15 AM - 6:50 PM<br>
+                            <strong>Book:</strong> 2-3 months ahead for summer visits<br>
+                            <strong>Duration:</strong> 1-1.5 hours<br>
+                            <strong>Link:</strong> <a href="https://www.galleriaaccademiafirenze.it" target="_blank">galleriaaccademiafirenze.it</a><br>
+                            <strong>Pro Tip:</strong> First entry slot (8:15 AM) = smallest crowds
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎨 Uffizi Gallery</h4>
+                        <p>One of the world's greatest art museums. Botticelli's Birth of Venus and Primavera, Caravaggio, da Vinci, Raphael - this is the Renaissance's greatest hits album. Plan 3+ hours minimum. Absolutely unmissable.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €20-25<br>
+                            <strong>Hours:</strong> Tue-Sun 8:15 AM - 6:50 PM<br>
+                            <strong>Book:</strong> MUST book timed entry in advance<br>
+                            <strong>Duration:</strong> 3-4 hours<br>
+                            <strong>Link:</strong> <a href="https://www.uffizi.it" target="_blank">uffizi.it</a><br>
+                            <strong>Skip Line:</strong> Firenze Card or pre-booked tickets mandatory
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ Duomo Complex & Dome Climb</h4>
+                        <p>Brunelleschi's dome is an engineering miracle. Climbing the 463 steps between the inner and outer shell is an experience - tight spiral staircases, Vasari frescoes up close, and knockout rooftop views. Book the dome climb separately!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €18 combo ticket (cathedral free, dome €18)<br>
+                            <strong>Dome Hours:</strong> Mon-Fri 8:30 AM - 7 PM, Sat 8:30 AM - 5 PM<br>
+                            <strong>Book Dome:</strong> Online in advance (sells out!)<br>
+                            <strong>Duration:</strong> 2-3 hours for full complex<br>
+                            <strong>Link:</strong> <a href="https://www.duomo.firenze.it" target="_blank">duomo.firenze.it</a><br>
+                            <strong>Includes:</strong> Cathedral, dome, baptistery, bell tower, museum
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🍷 Chianti Wine Country Tour</h4>
+                        <p>Escape the city for rolling Tuscan hills, medieval villages, and world-class wine. Visit wineries, taste Chianti Classico, eat farm-to-table lunch. Many tours include San Gimignano or Siena. Worth a full day!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €50-90 for small group tours<br>
+                            <strong>Duration:</strong> Full day (9 AM - 6 PM)<br>
+                            <strong>Includes:</strong> 2-3 wineries, lunch, hilltop towns<br>
+                            <strong>Book:</strong> GetYourGuide, Viator, or local tour companies<br>
+                            <strong>Departs:</strong> From Florence city center<br>
+                            <strong>Pro Tip:</strong> Small group tours (max 8 people) are best
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌉 Ponte Vecchio & Oltrarno</h4>
+                        <p>The iconic medieval bridge lined with jewelry shops. Cross it to the Oltrarno (other side of Arno) - the authentic, artisan neighborhood. Leather workshops, antique shops, fewer tourists. This is real Florence.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free<br>
+                            <strong>Best Time:</strong> Sunset for golden light<br>
+                            <strong>What to Do:</strong> Browse artisan workshops, visit Palazzo Pitti<br>
+                            <strong>Shopping:</strong> Leather goods, antiques, artisan crafts<br>
+                            <strong>Photo Spot:</strong> View bridge from Ponte Santa Trinita
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🏛️ Palazzo Pitti & Boboli Gardens</h4>
+                        <p>Massive Renaissance palace with multiple museums and stunning Boboli Gardens out back. The Palatine Gallery has Raphael's masterpieces. The gardens offer shade, views, and a break from museum crowds.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €16 palace + gardens combo<br>
+                            <strong>Hours:</strong> Tue-Sun 8:15 AM - 6:50 PM<br>
+                            <strong>Duration:</strong> 2-3 hours<br>
+                            <strong>Link:</strong> <a href="https://www.uffizi.it/palazzo-pitti" target="_blank">uffizi.it/palazzo-pitti</a><br>
+                            <strong>Perfect For:</strong> Afternoon after morning museum visit
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🥩 Mercato Centrale Food Hall</h4>
+                        <p>Two-floor food paradise. Ground floor is the historic market (fresh produce, meat, cheese). Upstairs is the modern food court with amazing vendors. Perfect for lunch or dinner on a budget with variety.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €8-15 per person for full meal<br>
+                            <strong>Hours:</strong> Ground floor 7 AM - 2 PM, upstairs 10 AM - midnight<br>
+                            <strong>Must-Try:</strong> Lampredotto (tripe sandwich), fresh pasta, gelato<br>
+                            <strong>Location:</strong> Near San Lorenzo market<br>
+                            <strong>Vibe:</strong> Casual, lively, authentic
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌄 Piazzale Michelangelo Sunset</h4>
+                        <p>THE panoramic viewpoint over Florence. At sunset, the city turns golden and the Duomo glows. Bring wine, cheese, and good company. Most romantic spot in Florence. Take the stairs up for exercise or bus #12 if lazy.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free<br>
+                            <strong>Best Time:</strong> 1 hour before sunset<br>
+                            <strong>Getting There:</strong> 20-min uphill walk or bus #12<br>
+                            <strong>Bring:</strong> Wine, snacks, camera<br>
+                            <strong>Pro Tip:</strong> Arrive early to claim a good spot on the wall
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ Basilica di Santa Croce</h4>
+                        <p>Final resting place of Michelangelo, Galileo, Machiavelli, and Rossini. Stunning frescoes, peaceful cloisters, and fascinating history. Less crowded than the Duomo but equally beautiful.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €8<br>
+                            <strong>Hours:</strong> Mon-Sat 9:30 AM - 5:30 PM, Sun 2-5:30 PM<br>
+                            <strong>Duration:</strong> 1 hour<br>
+                            <strong>Dress Code:</strong> Covered shoulders and knees<br>
+                            <strong>Nearby:</strong> Leather school in the cloisters
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🍝 Where to Eat in Florence</h2>
+            
+            <div class="restaurant-card">
+                <h4>Trattoria Mario</h4>
+                <p class="restaurant-type">Traditional Florentine • San Lorenzo</p>
+                <p>Tiny, no-frills trattoria serving honest Tuscan food since 1953. Shared tables, paper placemats, incredible bistecca. Cash only. Arrive early or prepare to wait. Worth every minute.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Order:</strong> Bistecca alla fiorentina (€40-50 for 2 to share), Ribollita soup (€8), Pappardelle al cinghiale (€12)<br>
+                    <strong>Price Range:</strong> €€ (€20-30 per person)<br>
+                    <strong>Hours:</strong> Mon-Sat 12-3:30 PM only (closed evenings!)<br>
+                    <strong>Location:</strong> Via Rosina 2r<br>
+                    <strong>Cash Only!</strong> ATM nearby
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>All'Antico Vinaio</h4>
+                <p class="restaurant-type">Sandwich Shop • Centro</p>
+                <p>Florence's most famous sandwiches. There's always a line, but it moves fast. MASSIVE sandwiches stuffed with quality meats, cheeses, and vegetables. €5-8 and you're stuffed. Grab and eat by the Arno.</p>
+                <div class="menu-highlights">
+                    <strong>Best Sandwiches:</strong> La Favolosa (€7), La Paradiso (€6.50), Create your own (€5-8)<br>
+                    <strong>Price Range:</strong> € (€5-10 for filling meal)<br>
+                    <strong>Hours:</strong> 10:30 AM - 10 PM daily<br>
+                    <strong>Tip:</strong> Order at counter, take to-go, eat by Ponte Vecchio<br>
+                    <strong>Warning:</strong> Expect lines (but they're fast!)
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gustapizza</h4>
+                <p class="restaurant-type">Pizza • Oltrarno</p>
+                <p>Wood-fired Neapolitan-style pizza in a tiny space. Only a few tables, mostly takeaway. Simple, perfect pizzas with quality ingredients. €7-10 for a whole pizza. Cash only.</p>
+                <div class="menu-highlights">
+                    <strong>Pizza Picks:</strong> Margherita (€6.50), Bufala e pachino (€9), Salsiccia (€8)<br>
+                    <strong>Price Range:</strong> € (€7-12 per person)<br>
+                    <strong>Location:</strong> Via Maggio 46r (Oltrarno)<br>
+                    <strong>Hours:</strong> 11:30 AM - 3 PM, 7-11 PM<br>
+                    <strong>Cash Only!</strong> Come prepared
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Trattoria ZaZa</h4>
+                <p class="restaurant-type">Tuscan Classics • San Lorenzo</p>
+                <p>Tourist-friendly but still great quality. Beautiful outdoor courtyard. Perfect for your first night when you want classic Tuscan dishes without hunting for hidden gems. Reservations accepted.</p>
+                <div class="menu-highlights">
+                    <strong>Highlights:</strong> Pappardelle al cinghiale (€14), Florentine steak (€45 for 2), Panna cotta (€6)<br>
+                    <strong>Price Range:</strong> €€ (€25-40 per person)<br>
+                    <strong>Booking:</strong> Call ahead or use TheFork app<br>
+                    <strong>Location:</strong> Piazza del Mercato Centrale<br>
+                    <strong>Atmosphere:</strong> Romantic courtyard seating
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gelato: La Carraia</h4>
+                <p class="restaurant-type">Artisan Gelato • Oltrarno</p>
+                <p>Locals' favorite gelato spot. Creamy, rich, not too sweet. Right by the Arno - grab a cone and walk along the river. Better than the touristy spots near Ponte Vecchio.</p>
+                <div class="menu-highlights">
+                    <strong>Best Flavors:</strong> Pistachio, Stracciatella, Salted caramel, Seasonal fruit<br>
+                    <strong>Price:</strong> €2.50-4 depending on size<br>
+                    <strong>Locations:</strong> Multiple, main one at Piazza Nazario Sauro<br>
+                    <strong>Tip:</strong> Go for the medium (you'll want more!)<br>
+                    <strong>Perfect After:</strong> Dinner walk along the Arno
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gelato: Gelateria dei Neri</h4>
+                <p class="restaurant-type">Artisan Gelato • Santa Croce</p>
+                <p>Another top gelato spot near Santa Croce. Their pistachio is legendary. No artificial colors - real ingredients only. Always a line of locals (good sign!).</p>
+                <div class="menu-highlights">
+                    <strong>Must-Try:</strong> Pistachio (the best!), Crema, Chocolate, Nocciola<br>
+                    <strong>Price:</strong> €2.50-4<br>
+                    <strong>Location:</strong> Via dei Neri 9/11r<br>
+                    <strong>Perfect For:</strong> Post-Uffizi treat
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Tips -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: var(--florence-color); margin-bottom: 30px;">💡 Florence Insider Tips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: var(--florence-color);">🚶 Getting Around</h4>
+                    <ul style="line-height: 2;">
+                        <li>Walk everywhere - Florence is tiny and compact!</li>
+                        <li>City center is mostly pedestrian-only</li>
+                        <li>No need for taxis or public transport</li>
+                        <li>Wear COMFORTABLE shoes (cobblestones everywhere)</li>
+                        <li>Use Google Maps offline mode</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--florence-color);">💰 Money-Saving Tips</h4>
+                    <ul style="line-height: 2;">
+                        <li>Sandwich from All'Antico Vinaio = €6 lunch</li>
+                        <li>Mercato Centrale upstairs = cheap, amazing food</li>
+                        <li>Buy wine from grocery stores (€5-8 good bottles)</li>
+                        <li>Free walking tours (tip-based) are excellent</li>
+                        <li>Refill water at free fountains citywide</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--florence-color);">⚠️ What to Avoid</h4>
+                    <ul style="line-height: 2;">
+                        <li>Restaurants right on Piazza del Duomo (overpriced)</li>
+                        <li>Skip the Firenze Card (not worth it for 3 days)</li>
+                        <li>Don't buy leather near Duomo (tourist quality)</li>
+                        <li>Avoid guided museum tours (do self-guided)</li>
+                        <li>Don't skip booking Uffizi/Accademia in advance!</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--florence-color);">📸 Photo Spots</h4>
+                    <ul style="line-height: 2;">
+                        <li>Piazzale Michelangelo at sunset (THE view!)</li>
+                        <li>Ponte Vecchio from Ponte Santa Trinita</li>
+                        <li>Duomo from Giotto's Bell Tower</li>
+                        <li>Boboli Gardens rose garden</li>
+                        <li>Via dei Calzaiuoli at sunrise (empty!)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample 3-Day Itinerary -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">📅 Sample 3-Day Florence Itinerary</h2>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h4>Day 1: Renaissance Art</h4>
+                    <p><strong>Morning:</strong> Arrive from Milan, check in, climb Duomo (book in advance!)</p>
+                    <p><strong>Afternoon:</strong> Accademia Gallery to see David, wander San Lorenzo market</p>
+                    <p><strong>Evening:</strong> Dinner at Trattoria Mario, gelato walk along the Arno</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Hit the big sights while you're fresh! David + Duomo = Florence essentials.</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 2: Chianti Wine Escape</h4>
+                    <p><strong>Full Day:</strong> Chianti wine tour - vineyards, tastings, Tuscan lunch, medieval towns</p>
+                    <p><strong>Evening:</strong> Return to Florence, casual dinner in Oltrarno, Piazzale Michelangelo sunset</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>The countryside break is worth it! Rolling hills, wine, and Tuscan cooking.</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 3: Uffizi & Oltrarno</h4>
+                    <p><strong>Morning:</strong> Early Uffizi Gallery visit (3+ hours)</p>
+                    <p><strong>Afternoon:</strong> Ponte Vecchio, explore Oltrarno artisan shops, Palazzo Pitti gardens</p>
+                    <p><strong>Evening:</strong> Pizza at Gustapizza, final gelato, farewell to Florence</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Save the Uffizi for when you can dedicate serious time. It's overwhelming (in the best way!).</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🗺️ Florence Map</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46158.38470085532!2d11.232808!3d43.771389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a56a680d2d6ad%3A0x93d57917efc72a03!2sFlorence%2C%20Italy!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Next Destination -->
+        <section class="cta-section">
+            <h2>Next Stop: Rome 🚄</h2>
+            <p>Ready for the grand finale? The train from Florence to Rome takes just 90 minutes. Ancient history and amazing food await!</p>
+            <div class="cta-buttons">
+                <a href="trains.html" class="btn-large">View Train Options →</a>
+                <a href="rome.html" class="btn-large">Preview Rome →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Florence awaits!</p>
+        </div>
+    </footer>
+</body>
+</html>

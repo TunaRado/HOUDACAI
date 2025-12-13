@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>`n    <script src="auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome - The Eternal City | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .rome-header {
+            background: linear-gradient(135deg, var(--rome-color) 0%, #8e44ad 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-info {
+            padding: 25px;
+        }
+        
+        .hotel-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--rome-color);
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--rome-color);
+            margin: 10px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .hotel-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .hotel-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .hotel-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--rome-color);
+            font-weight: 700;
+        }
+        
+        .activity-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--rome-color);
+        }
+        
+        .activity-card h4 {
+            color: var(--rome-color);
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .activity-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .activity-details {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .activity-details strong {
+            color: var(--rome-color);
+        }
+        
+        .restaurant-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--rome-color);
+        }
+        
+        .restaurant-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--rome-color);
+        }
+        
+        .restaurant-type {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .menu-highlights {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="rome-header">
+        <div class="container">
+            <h1>🏛️ Rome - La Città Eterna</h1>
+            <p class="tagline">The Eternal City | 4 Nights, June 29 - July 2, 2026</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Image -->
+        <section style="margin: 40px 0;">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&h=500&fit=crop" 
+                 alt="Rome Colosseum" 
+                 style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </section>
+
+        <!-- Quick Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+            <h2 style="color: var(--rome-color);">Why Rome?</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                Rome isn't just a city - it's 2,800 years of human history layered on top of itself. Walk from ancient Roman ruins to Renaissance piazzas to modern espresso bars all in one afternoon. The Colosseum, the Vatican, the Trevi Fountain, the Pantheon - every corner reveals another masterpiece. Beyond the monuments, there's the food (carbonara!), the lifestyle (afternoon riposo!), and the pure magic of tossing a coin in a fountain at midnight. Rome doesn't just have history - Rome IS history.
+            </p>
+        </section>
+
+        <!-- Hotels Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🏨 Where to Stay in Rome</h2>
+            
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=400&fit=crop" alt="Hotel Solis">
+                <div class="hotel-info">
+                    <h3>⭐ Hotel Solis - BEST BUDGET PICK</h3>
+                    <p class="restaurant-type">Budget-Friendly • Near Termini Station</p>
+                    <p class="price">€85-120/night</p>
+                    <p class="price-note">≈ $340-480 total for 4 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>3-minute walk from Termini station (perfect for train arrival!)</li>
+                        <li>10-minute metro ride to Colosseum</li>
+                        <li>Clean, modern rooms with AC</li>
+                        <li>Breakfast included</li>
+                        <li>24-hour reception</li>
+                        <li>Great value near metro/bus hub</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Why we love it:</strong> Super convenient for arrival from Florence train. The Termini area isn't the prettiest, but you're connected to everything by metro. Save your money for Vatican tickets and amazing Roman meals!
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Book on Booking.com →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&h=400&fit=crop" alt="Hotel Trastevere">
+                <div class="hotel-info">
+                    <h3>Hotel Santa Maria Trastevere</h3>
+                    <p class="restaurant-type">Charming • Trastevere Neighborhood</p>
+                    <p class="price">€130-170/night</p>
+                    <p class="price-note">≈ $520-680 total for 4 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>In the heart of charming Trastevere</li>
+                        <li>Quiet courtyard with orange trees</li>
+                        <li>Walking distance to Vatican</li>
+                        <li>Surrounded by amazing restaurants</li>
+                        <li>Breakfast in peaceful garden</li>
+                        <li>Authentic Roman neighborhood vibe</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Perfect for:</strong> Staying in Rome's most atmospheric neighborhood. Trastevere is cobblestone streets, family restaurants, and local life. You'll feel like a temporary Roman!
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Check Availability →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=400&fit=crop" alt="Hotel Condotti">
+                <div class="hotel-info">
+                    <h3>Hotel Condotti</h3>
+                    <p class="restaurant-type">Boutique • Spanish Steps Area</p>
+                    <p class="price">€140-180/night</p>
+                    <p class="price-note">≈ $560-720 total for 4 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Steps from Spanish Steps and Trevi Fountain</li>
+                        <li>High-end shopping street location</li>
+                        <li>Classic Roman building with modern rooms</li>
+                        <li>Rooftop terrace with city views</li>
+                        <li>Walkable to most major sights</li>
+                        <li>Breakfast included</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Splurge option:</strong> Prime location in the fashionable heart of Rome. Fall asleep thinking about the Trevi Fountain being 3 minutes away. Worth it for the convenience and atmosphere.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">See Prices →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do Section -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">🗺️ Things to Do in Rome (4 Days)</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 30px;"><em>With 4 days, focus on the absolute must-sees. Rome deserves a return trip anyway!</em></p>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🏛️ Colosseum Underground Tour</h4>
+                        <p>The most iconic monument in Rome. The underground tour takes you into the hypogeum (beneath the arena floor) where gladiators and animals waited. Standing where gladiators stood is INCREDIBLE. Book this tour months ahead!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €25-35 for underground tour<br>
+                            <strong>Hours:</strong> 9 AM - 7 PM (summer)<br>
+                            <strong>Book:</strong> 2-3 months ahead for underground access<br>
+                            <strong>Duration:</strong> 3 hours (includes Forum & Palatine Hill)<br>
+                            <strong>Link:</strong> <a href="https://www.coopculture.it" target="_blank">coopculture.it</a><br>
+                            <strong>Pro Tip:</strong> First entry slot = fewer crowds, cooler temps
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ Vatican Museums & Sistine Chapel</h4>
+                        <p>The Vatican Museums are overwhelming (in the best way) - miles of art leading to Michelangelo's Sistine Chapel ceiling. The creation of Adam, the Last Judgment - seeing them in person is profound. St. Peter's Basilica is free!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €17 museums, FREE St. Peter's Basilica<br>
+                            <strong>Hours:</strong> 9 AM - 6 PM (last entry 4 PM)<br>
+                            <strong>Book:</strong> Skip-the-line tickets MANDATORY<br>
+                            <strong>Duration:</strong> 3-4 hours minimum<br>
+                            <strong>Link:</strong> <a href="https://www.museivaticani.va" target="_blank">museivaticani.va</a><br>
+                            <strong>Dress Code:</strong> Shoulders + knees covered (strictly enforced!)
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛲ Trevi Fountain</h4>
+                        <p>The most beautiful fountain in the world. Yes, it's touristy. Yes, it's crowded. Yes, you must toss a coin in (right hand over left shoulder = guaranteed return to Rome). Visit at midnight for magical, empty experience!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free (+ €1 for coin toss!)<br>
+                            <strong>Best Time:</strong> 11 PM - 1 AM for fewer crowds<br>
+                            <strong>Tradition:</strong> One coin = return to Rome, two = new romance, three = marriage<br>
+                            <strong>Nearby:</strong> Great gelato shops and restaurants<br>
+                            <strong>Photo Tip:</strong> Come early AM or late PM for less crowded shots
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🏛️ Pantheon</h4>
+                        <p>The best-preserved ancient Roman building. The dome is an engineering marvel - still the world's largest unreinforced concrete dome. Entry is free! Rain falling through the oculus (hole in the dome) is magical.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> FREE (recently made free again!)<br>
+                            <strong>Hours:</strong> 9 AM - 7 PM daily<br>
+                            <strong>Duration:</strong> 30 minutes<br>
+                            <strong>Nearby:</strong> Great piazzas for coffee and people-watching<br>
+                            <strong>Fun Fact:</strong> Built 2,000 years ago and still standing!
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎨 Borghese Gallery</h4>
+                        <p>Rome's most beautiful small museum. Bernini sculptures, Caravaggio paintings, in a stunning villa with gardens. Limited visitors (120 at a time) make it peaceful. Book weeks ahead - it sells out!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €20 (includes gardens)<br>
+                            <strong>Hours:</strong> Tue-Sun 9 AM - 7 PM, closed Mondays<br>
+                            <strong>Book:</strong> Timed entry required, book 2-3 weeks ahead<br>
+                            <strong>Duration:</strong> 2 hours inside, 1+ hour in gardens<br>
+                            <strong>Link:</strong> <a href="https://www.galleriaborghese.beniculturali.it" target="_blank">galleriaborghese.it</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🍝 Trastevere Food Crawl</h4>
+                        <p>Rome's most charming neighborhood. Narrow cobblestone streets, ivy-covered buildings, family-run trattorias. Wander, eat, drink, repeat. This is where Romans actually live and eat. Perfect for evening passeggiata.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €25-40 per person for dinner & drinks<br>
+                            <strong>Best Time:</strong> Evening (7-10 PM)<br>
+                            <strong>Must-Visit:</strong> Da Enzo al 29, Tonnarello, Trapizzino<br>
+                            <strong>Vibe:</strong> Authentic, local, romantic<br>
+                            <strong>Pro Tip:</strong> Get lost in the side streets - that's where magic happens
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌺 Roman Forum & Palatine Hill</h4>
+                        <p>Walk where Caesar walked. The Forum was ancient Rome's city center. Palatine Hill has the best views and ruins of imperial palaces. Included with Colosseum ticket - do them together!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Included with Colosseum ticket<br>
+                            <strong>Duration:</strong> 2 hours<br>
+                            <strong>Best Time:</strong> After Colosseum, before it gets too hot<br>
+                            <strong>Bring:</strong> Water, sunscreen, hat (zero shade!)<br>
+                            <strong>View:</strong> Palatine Hill overlooks Circus Maximus
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌃 Evening Piazza Hopping</h4>
+                        <p>Rome's piazzas come alive at night. Start at Campo de' Fiori, walk to Piazza Navona (Bernini's fountains!), hit Pantheon, end at Trevi. Get gelato, sip wine, people-watch. This IS the Roman lifestyle.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free + gelato/drinks<br>
+                            <strong>Best Time:</strong> After dinner (9-11 PM)<br>
+                            <strong>Route:</strong> Campo de' Fiori → Navona → Pantheon → Trevi<br>
+                            <strong>Duration:</strong> 2-3 hours of wandering<br>
+                            <strong>Perfect For:</strong> Romantic evening walk
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ St. Peter's Basilica & Dome</h4>
+                        <p>The largest church in the world. Michelangelo's Pietà, Bernini's baldachin, and the dome climb (551 steps!) with panoramic views. The basilica itself is FREE - only pay for the dome climb.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> FREE basilica, €10 dome climb (stairs), €12 (elevator + stairs)<br>
+                            <strong>Hours:</strong> 7 AM - 7 PM (summer), dome closes 6 PM<br>
+                            <strong>Duration:</strong> 2 hours (1 hour basilica, 1 hour dome)<br>
+                            <strong>Dress Code:</strong> Shoulders and knees covered<br>
+                            <strong>Pro Tip:</strong> Go early (7 AM) to avoid lines
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🍝 Where to Eat in Rome</h2>
+            
+            <div class="restaurant-card">
+                <h4>Da Enzo al 29</h4>
+                <p class="restaurant-type">Traditional Roman • Trastevere</p>
+                <p>Tiny family trattoria with the best cacio e pepe in Rome. Handwritten daily menu, paper tablecloths, zero pretension. Lines form before opening. Cash only. Worth the wait.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Order:</strong> Cacio e pepe (€10), Carbonara (€10), Amatriciana (€10), Carciofi alla romana (€8)<br>
+                    <strong>Price Range:</strong> €€ (€25-35 per person with wine)<br>
+                    <strong>Hours:</strong> Mon-Sat 12:30-3 PM, 7:30-11 PM, closed Sundays<br>
+                    <strong>Location:</strong> Via dei Vascellari 29, Trastevere<br>
+                    <strong>Cash Only!</strong> No reservations, arrive early
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Trapizzino</h4>
+                <p class="restaurant-type">Street Food • Multiple Locations</p>
+                <p>Rome's best street food invention - pizza dough pocket stuffed with Roman classics. Perfect for quick, cheap, delicious lunch. Multiple locations. €4-6 and you're full!</p>
+                <div class="menu-highlights">
+                    <strong>Best Trapizzini:</strong> Pollo alla cacciatora (€5), Polpette al sugo (€5), Cacio e pepe (€5)<br>
+                    <strong>Price Range:</strong> € (€8-12 for filling meal)<br>
+                    <strong>Locations:</strong> Trastevere, Testaccio, others<br>
+                    <strong>Perfect For:</strong> Lunch on the go<br>
+                    <strong>Pair With:</strong> Supplì (fried rice balls, €2)
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Roscioli</h4>
+                <p class="restaurant-type">Deli/Restaurant • Centro</p>
+                <p>Part deli, part restaurant, all incredible. Their carbonara is legendary. Book ahead for restaurant seating or grab cheese/meat from the deli counter. Wine selection is outstanding.</p>
+                <div class="menu-highlights">
+                    <strong>Specialties:</strong> Carbonara (€14), Burrata (€16), Cheese/meat boards (€20-30), Pasta cacio e pepe (€12)<br>
+                    <strong>Price Range:</strong> €€€ (€40-60 per person)<br>
+                    <strong>Booking:</strong> Essential for dinner, walk-in for lunch<br>
+                    <strong>Location:</strong> Via dei Giubbonari 21<br>
+                    <strong>Tip:</strong> Try their pasta carbonara - it's perfect
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Pizzeria Ai Marmi (L'Obitorio)</h4>
+                <p class="restaurant-type">Pizza • Trastevere</p>
+                <p>Locals call it "The Morgue" because of the marble tabletops. Thin-crust Roman pizza, always packed with Romans (good sign!), outdoor seating, €7-10 pizzas. Cash only.</p>
+                <div class="menu-highlights">
+                    <strong>Best Pizzas:</strong> Margherita (€7), Diavola (€9), Capricciosa (€9.50)<br>
+                    <strong>Price Range:</strong> € (€10-18 per person with beer)<br>
+                    <strong>Location:</strong> Viale di Trastevere 53<br>
+                    <strong>Hours:</strong> 6:30 PM - 2 AM daily<br>
+                    <strong>Cash Only!</strong> Expect to wait for tables
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Tonnarello</h4>
+                <p class="restaurant-type">Traditional Trattoria • Trastevere</p>
+                <p>Another Trastevere gem serving massive portions of Roman classics. Their cacio e pepe arrives in a giant wheel of pecorino cheese (Instagram gold). Prices are very reasonable for the quality and portions.</p>
+                <div class="menu-highlights">
+                    <strong>Signatures:</strong> Cacio e pepe in cheese wheel (€14), Amatriciana (€12), Gricia (€12), Tiramisu (€6)<br>
+                    <strong>Price Range:</strong> €€ (€25-40 per person)<br>
+                    <strong>Booking:</strong> Recommended for dinner<br>
+                    <strong>Location:</strong> Via della Paglia 1, Trastevere<br>
+                    <strong>Vibe:</strong> Lively, authentic, generous portions
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gelato: Giolitti</h4>
+                <p class="restaurant-type">Historic Gelato • Centro</p>
+                <p>Rome's most famous gelateria since 1900. Massive selection, generous portions, classic flavors done perfectly. The pistachio and stracciatella are legendary.</p>
+                <div class="menu-highlights">
+                    <strong>Best Flavors:</strong> Pistachio, Nocciola, Stracciatella, Crema, Seasonal fruit<br>
+                    <strong>Price:</strong> €3-5 depending on size<br>
+                    <strong>Location:</strong> Via degli Uffici del Vicario 40<br>
+                    <strong>Tip:</strong> Pay first, then show receipt to gelato counter<br>
+                    <strong>Nearby:</strong> Pantheon (5 min walk)
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Tips -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: var(--rome-color); margin-bottom: 30px;">💡 Rome Insider Tips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: var(--rome-color);">🚇 Getting Around</h4>
+                    <ul style="line-height: 2;">
+                        <li>Buy 3-day metro pass (€18) at Termini</li>
+                        <li>Metro is limited - lots of walking required</li>
+                        <li>Download Roma+ app for buses/metro</li>
+                        <li>Wear comfortable shoes (cobblestones!)</li>
+                        <li>Uber works but taxis are fine too</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--rome-color);">💰 Money-Saving Tips</h4>
+                    <ul style="line-height: 2;">
+                        <li>Drink coffee standing at bar (€1.50 vs €5 seated)</li>
+                        <li>Free water fountains (nasoni) citywide</li>
+                        <li>Skip Rome City Pass (not worth it for 4 days)</li>
+                        <li>Aperitivo in Trastevere = cheap dinner</li>
+                        <li>Many churches are free and stunning!</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--rome-color);">⚠️ What to Avoid</h4>
+                    <ul style="line-height: 2;">
+                        <li>Restaurants near Colosseum/Trevi (tourist traps)</li>
+                        <li>Gladiator photo guys (they charge €20+!)</li>
+                        <li>Rose sellers in piazzas (scam)</li>
+                        <li>Skip the Colosseum basic ticket - get underground!</li>
+                        <li>Don't show up to Vatican without tickets</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--rome-color);">📸 Photo Spots</h4>
+                    <ul style="line-height: 2;">
+                        <li>Colosseum from Via Nicola Salvi at sunrise</li>
+                        <li>St. Peter's dome from Castel Sant'Angelo</li>
+                        <li>Trevi Fountain at midnight (less crowded)</li>
+                        <li>Orange Garden (Giardino degli Aranci) sunset</li>
+                        <li>Keyhole view on Aventine Hill</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample 4-Day Itinerary -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">📅 Sample 4-Day Rome Itinerary</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;"><em>Rome deserves a week, but you can hit the highlights in 4 days!</em></p>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h4>Day 1: Ancient Rome</h4>
+                    <p><strong>Morning:</strong> Arrive from Florence, check in, early lunch at Trapizzino</p>
+                    <p><strong>Afternoon:</strong> Colosseum underground tour + Roman Forum + Palatine Hill</p>
+                    <p><strong>Evening:</strong> Sunset at Campidoglio, dinner in Monti neighborhood</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Start with ancient Rome while you're fresh! The Colosseum tour is 3 hours.</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 2: Vatican City</h4>
+                    <p><strong>Morning:</strong> Early Vatican Museums + Sistine Chapel (allow 3-4 hours!)</p>
+                    <p><strong>Afternoon:</strong> St. Peter's Basilica + dome climb</p>
+                    <p><strong>Evening:</strong> Trastevere food crawl (Da Enzo, pizza at Ai Marmi)</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>The Vatican is massive - start early and pace yourself!</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 3: Art & Fountains</h4>
+                    <p><strong>Morning:</strong> Borghese Gallery (timed entry), stroll Villa Borghese gardens</p>
+                    <p><strong>Afternoon:</strong> Spanish Steps, Trevi Fountain, Pantheon, Piazza Navona</p>
+                    <p><strong>Evening:</strong> Dinner at Roscioli, late-night return to Trevi</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Perfect day for wandering the historic center!</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 4: Final Favorites</h4>
+                    <p><strong>Morning:</strong> Revisit favorite spot, last gelato, shopping for souvenirs</p>
+                    <p><strong>Afternoon:</strong> Final Roman pasta lunch, pack, airport transfer</p>
+                    <p><strong>Evening:</strong> Flight home (or extend if you can't leave!)</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Use this day to fill in anything you missed or just soak it all in.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🗺️ Rome Map</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95638.14712388596!2d12.426384!3d41.902782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Italy!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Next Step -->
+        <section class="cta-section">
+            <h2>Time to Go Home 🛫</h2>
+            <p>After 4 amazing days in Rome, it's time to head back to Tampa. But Rome will call you back - they all do!</p>
+            <div class="cta-buttons">
+                <a href="flights-return.html" class="btn-large">View Return Flights →</a>
+                <a href="index.html" class="btn-large">Back to Overview →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Arrivederci, Roma!</p>
+        </div>
+    </footer>
+</body>
+</html>

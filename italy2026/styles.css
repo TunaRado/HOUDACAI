@@ -1,0 +1,755 @@
+/* CSS Variables for consistent theming */
+:root {
+    --venice-color: #4A90E2;
+    --milan-color: #E74C3C;
+    --florence-color: #F39C12;
+    --rome-color: #9B59B6;
+    --travel-color: #95A5A6;
+    --primary-dark: #2C3E50;
+    --light-bg: #ECF0F1;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    background: white;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.overview-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+}
+
+.overview-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.overview-card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.overview-card .detail {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Route Visual */
+.route-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.city-stop {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.stop-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #F39C12;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 3px solid white;
+}
+
+.city-stop h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.city-stop p {
+    margin: 0.25rem 0;
+}
+
+.city-stop .dates {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Days Grid */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.day-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    border-left: 5px solid #ccc;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.day-card.venice {
+    border-left-color: var(--venice-color);
+}
+
+.day-card.milan {
+    border-left-color: var(--milan-color);
+}
+
+.day-card.florence {
+    border-left-color: var(--florence-color);
+}
+
+.day-card.rome {
+    border-left-color: var(--rome-color);
+}
+
+.day-card.travel {
+    border-left-color: var(--travel-color);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.day-number {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #667eea;
+}
+
+.day-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.day-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.day-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Quick Facts */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.fact {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid #667eea;
+}
+
+.fact h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.fact ul {
+    list-style-position: inside;
+    margin-left: 0;
+}
+
+.fact li {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.fact .tip {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-left: 3px solid #ffc107;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Day Page Specific Styles */
+.day-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.day-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.day-nav a:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.day-title {
+    text-align: center;
+}
+
+.location-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.activities {
+    margin: 2rem 0;
+}
+
+.activity-item {
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.activity-item h4 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.map-container {
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.tips-box {
+    background: #e8f4f8;
+    border-left: 4px solid #4A90E2;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+}
+
+.tips-box h4 {
+    color: #4A90E2;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .route-visual {
+        flex-direction: column;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+    }
+    
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* New Styles for Location-Based Structure */
+
+/* Destination Cards */
+.destinations {
+    padding: 40px 0;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 30px;
+}
+
+.destination-content h3 {
+    font-size: 2em;
+    margin: 0 0 10px 0;
+}
+
+.destination-content .duration {
+    color: #666;
+    font-size: 0.95em;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.destination-content p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.badge {
+    background: var(--venice-color);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.venice-bg .badge {
+    background: var(--venice-color);
+}
+
+.milan-bg .badge {
+    background: var(--milan-color);
+}
+
+.florence-bg .badge {
+    background: var(--florence-color);
+}
+
+.rome-bg .badge {
+    background: var(--rome-color);
+}
+
+.btn {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #764ba2;
+}
+
+.venice-bg .btn {
+    background: var(--venice-color);
+}
+
+.milan-bg .btn {
+    background: var(--milan-color);
+}
+
+.florence-bg .btn {
+    background: var(--florence-color);
+}
+
+.rome-bg .btn {
+    background: var(--rome-color);
+}
+
+/* Travel Logistics */
+.travel-logistics {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.logistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.logistics-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.logistics-card h3 {
+    font-size: 1.5em;
+    margin: 0 0 15px 0;
+    color: #667eea;
+}
+
+.logistics-card p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Enhanced Facts Grid */
+.quick-facts {
+    padding: 60px 0;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.fact {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.fact h4 {
+    font-size: 1.3em;
+    margin: 0 0 15px 0;
+    color: #667eea;
+}
+
+.fact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fact ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    line-height: 1.6;
+}
+
+.fact ul li:last-child {
+    border-bottom: none;
+}
+
+/* Packing List */
+.packing-list {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.packing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.packing-category {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.packing-category h4 {
+    font-size: 1.2em;
+    margin: 0 0 15px 0;
+    color: #667eea;
+    border-bottom: 2px solid #764ba2;
+    padding-bottom: 10px;
+}
+
+.packing-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.packing-category ul li {
+    padding: 6px 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer em {
+    color: #764ba2;
+    font-style: italic;
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    .destination-card img {
+        height: 250px;
+    }
+    
+    .logistics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .btn-large {
+        padding: 14px 30px;
+        font-size: 1em;
+    }
+}

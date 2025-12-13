@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>`n    <script src="auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound Flights - TPA to Venice | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .flights-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .flight-option-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .airline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .airline-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #3498db;
+        }
+        
+        .price-estimate {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #27ae60;
+        }
+        
+        .flight-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .tips-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="flights-header">
+        <div class="container">
+            <h1>✈️ Outbound Flights</h1>
+            <p class="tagline">Tampa (TPA) → Venice (VCE) | Friday, June 19, 2026</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin: 40px 0;">
+            <h2 style="color: #3498db;">Getting to Venice</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                There are no direct flights from Tampa to Venice, so you'll have one connection (usually in the northeast USA or Europe). The total journey takes 12-16 hours including layover. Since you want to arrive Saturday morning fresh and ready to explore, look for Friday evening departures that get you into Venice by Saturday morning European time.
+            </p>
+        </section>
+
+        <!-- Flight Options -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🛫 Flight Options</h2>
+            
+            <!-- Option 1: Lufthansa -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇩🇪 Lufthansa (via Munich or Frankfurt)</div>
+                    <div class="price-estimate">$550-750 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>TPA → MUC/FRA:</strong> Evening departure ~6-8 PM (9-10 hours overnight)</li>
+                        <li><strong>Layover:</strong> 2-4 hours in Munich or Frankfurt</li>
+                        <li><strong>MUC/FRA → VCE:</strong> Short morning hop (1-1.5 hours)</li>
+                        <li><strong>Arrive Venice:</strong> Late morning/early afternoon Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Reliable airline, good schedule, efficient German airports<br>
+                    <strong>Cons:</strong> Can be pricey, sometimes longer layovers<br>
+                    <strong>Book At:</strong> <a href="https://www.lufthansa.com" target="_blank">lufthansa.com</a> or Google Flights
+                </p>
+            </div>
+
+            <!-- Option 2: United -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸 United (via Newark)</div>
+                    <div class="price-estimate">$480-650 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>TPA → EWR:</strong> Afternoon/evening departure ~3-5 PM (3 hours)</li>
+                        <li><strong>Layover:</strong> 2-5 hours in Newark</li>
+                        <li><strong>EWR → VCE:</strong> Red-eye overnight (8-9 hours)</li>
+                        <li><strong>Arrive Venice:</strong> Late morning Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Often cheapest option, familiar US airline, direct transatlantic<br>
+                    <strong>Cons:</strong> Newark can be chaotic, seats can be tight<br>
+                    <strong>Book At:</strong> <a href="https://www.united.com" target="_blank">united.com</a> or Google Flights
+                </p>
+            </div>
+
+            <!-- Option 3: Delta/KLM -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸🇳🇱 Delta/KLM (via Amsterdam)</div>
+                    <div class="price-estimate">$580-720 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>TPA → ATL → AMS:</strong> Connect through Atlanta, overnight to Amsterdam (total ~12 hours)</li>
+                        <li><strong>Layover:</strong> 2-3 hours in Amsterdam (Schiphol)</li>
+                        <li><strong>AMS → VCE:</strong> Morning flight (2 hours)</li>
+                        <li><strong>Arrive Venice:</strong> Early afternoon Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Schiphol is a great airport, good service, Delta SkyMiles<br>
+                    <strong>Cons:</strong> Extra connection can add time<br>
+                    <strong>Book At:</strong> <a href="https://www.delta.com" target="_blank">delta.com</a> or <a href="https://www.klm.com" target="_blank">klm.com</a>
+                </p>
+            </div>
+
+            <!-- Option 4: American/British Airways -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸🇬🇧 American/British Airways (via London)</div>
+                    <div class="price-estimate">$520-680 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>TPA → LHR:</strong> Evening departure, overnight flight (8-9 hours)</li>
+                        <li><strong>Layover:</strong> 2-4 hours at Heathrow</li>
+                        <li><strong>LHR → VCE:</strong> Short hop (2 hours)</li>
+                        <li><strong>Arrive Venice:</strong> Afternoon Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Competitive pricing, good alliance benefits<br>
+                    <strong>Cons:</strong> Heathrow can be crowded, sometimes delays<br>
+                    <strong>Book At:</strong> <a href="https://www.aa.com" target="_blank">aa.com</a> or <a href="https://www.britishairways.com" target="_blank">britishairways.com</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Booking Tips -->
+        <section style="background: white; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: #3498db; margin-bottom: 30px;">💰 When & How to Book</h2>
+            
+            <div class="tips-box">
+                <h3 style="margin: 0 0 15px 0;">⏰ BEST TIME TO BOOK</h3>
+                <ul style="line-height: 2;">
+                    <li><strong>RIGHT NOW (Dec 2025 - Jan 2026):</strong> Start monitoring prices!</li>
+                    <li><strong>Sweet Spot:</strong> 3-4 months before departure (Feb-March 2026)</li>
+                    <li><strong>Last Minute:</strong> Prices typically increase after April 2026</li>
+                </ul>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div>
+                    <h3 style="color: #3498db;">Where to Search</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li><strong>Google Flights</strong> - Best for price tracking</li>
+                        <li><strong>Kayak</strong> - Great flexible search</li>
+                        <li><strong>Airline Direct</strong> - Sometimes cheaper, better service</li>
+                        <li><strong>Skiplagged</strong> - Hidden city ticketing (risky but cheap)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #3498db;">Money-Saving Tips</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Set Google Flights price alerts NOW</li>
+                        <li>Be flexible with departure times</li>
+                        <li>Consider nearby airports (even MCO Orlando)</li>
+                        <li>Use airline miles/points if you have them</li>
+                        <li>Book Tuesday/Wednesday for best deals</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #3498db;">What to Look For</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Layover 2-4 hours (not too short, not too long)</li>
+                        <li>Arrive Venice by early afternoon Saturday</li>
+                        <li>Check baggage fees (not always included!)</li>
+                        <li>Seat selection fees</li>
+                        <li>Cancellation policy (worth checking!)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packing & Prep -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🎒 Flight Day Preparation</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #3498db;">
+                    <h4 style="color: #3498db;">Carry-On Essentials</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Passport (check expiration - needs 6 months validity!)</li>
+                        <li>Phone, charger, power adapter</li>
+                        <li>Medications + copies of prescriptions</li>
+                        <li>Change of clothes (in case luggage is delayed)</li>
+                        <li>Neck pillow, eye mask, earplugs</li>
+                        <li>Empty water bottle (fill after security)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #3498db;">
+                    <h4 style="color: #3498db;">Before You Leave</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Check in online 24 hours before</li>
+                        <li>Download boarding passes to phone</li>
+                        <li>Notify credit card companies of travel</li>
+                        <li>Download offline maps (Venice!)</li>
+                        <li>Bring printed hotel confirmations</li>
+                        <li>Arrive TPA 2.5 hours early (international)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #3498db;">
+                    <h4 style="color: #3498db;">Surviving the Flight</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Stay hydrated (ask for water often)</li>
+                        <li>Walk around every 2 hours</li>
+                        <li>Set watch to Italy time when you board</li>
+                        <li>Sleep on the transatlantic leg if possible</li>
+                        <li>Download movies/books before departure</li>
+                        <li>Compression socks help with leg swelling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arrival Info -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: #3498db; margin-bottom: 30px;">🛬 Arriving at Venice Marco Polo Airport</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div>
+                    <h4 style="color: #3498db;">Getting to Venice City</h4>
+                    <ul style="line-height: 2;">
+                        <li><strong>Water Bus (Alilaguna):</strong> €15, 1 hour, scenic!</li>
+                        <li><strong>Water Taxi:</strong> €110-130, 30 min, direct to hotel</li>
+                        <li><strong>Bus + Vaporetto:</strong> Cheaper but slower</li>
+                    </ul>
+                    <p style="margin-top: 15px; background: #fff3cd; padding: 15px; border-radius: 6px;">
+                        <strong>Recommendation:</strong> Take the Alilaguna water bus - it's the perfect introduction to Venice!
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 style="color: #3498db;">First Hours in Venice</h4>
+                    <ul style="line-height: 2;">
+                        <li>Hotel check-in (usually 2-3 PM)</li>
+                        <li>Power nap if exhausted</li>
+                        <li>Light walk around neighborhood</li>
+                        <li>Early dinner around 7 PM</li>
+                        <li>Go to bed early-ish to adjust</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #666; font-style: italic;">
+                        Fight the urge to nap all day - you'll never adjust to the time zone!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Ready to Find Your Perfect Flight?</h2>
+            <p>Start searching for flights to Venice and set price alerts!</p>
+            <div class="cta-buttons">
+                <a href="https://www.google.com/flights" target="_blank" class="btn-large">Search Google Flights →</a>
+                <a href="venice.html" class="btn-large">Plan Venice Stay →</a>
+                <a href="index.html" class="btn-large">Back to Overview →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Buon viaggio!</p>
+        </div>
+    </footer>
+</body>
+</html>

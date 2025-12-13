@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>`n    <script src="auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venice - The Floating City | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .venice-header {
+            background: linear-gradient(135deg, var(--venice-color) 0%, #2171c7 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-info {
+            padding: 25px;
+        }
+        
+        .hotel-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--venice-color);
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--venice-color);
+            margin: 10px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .hotel-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .hotel-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .hotel-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--venice-color);
+            font-weight: 700;
+        }
+        
+        .activity-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--venice-color);
+        }
+        
+        .activity-card h4 {
+            color: var(--venice-color);
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .activity-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .activity-details {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .activity-details strong {
+            color: var(--venice-color);
+        }
+        
+        .restaurant-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--venice-color);
+        }
+        
+        .restaurant-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--venice-color);
+        }
+        
+        .restaurant-type {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .menu-highlights {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="venice-header">
+        <div class="container">
+            <h1>🛶 Venice - La Serenissima</h1>
+            <p class="tagline">The Floating City | 3 Nights, June 20-22, 2026</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Image -->
+        <section style="margin: 40px 0;">
+            <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=1200&h=500&fit=crop" 
+                 alt="Venice Grand Canal" 
+                 style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </section>
+
+        <!-- Quick Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+            <h2 style="color: var(--venice-color);">Why Venice?</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                There's nowhere else on Earth like Venice. Built on 118 islands connected by over 400 bridges, this floating masterpiece defies logic and captivates the soul. Here, you'll step into a living Renaissance painting where waterways replace roads, gondolas replace cars, and every corner reveals centuries of Venetian grandeur. From the glittering mosaics of St. Mark's Basilica to the rainbow-colored houses of Burano, Venice is pure magic.
+            </p>
+        </section>
+
+        <!-- Hotels Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🏨 Where to Stay in Venice</h2>
+            
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=400&fit=crop" alt="Hotel Antiche Figure">
+                <div class="hotel-info">
+                    <h3>⭐ Hotel Antiche Figure - GREAT VALUE</h3>
+                    <p class="restaurant-type">Grand Canal Views • Santa Croce District</p>
+                    <p class="price">€140-180/night</p>
+                    <p class="price-note">≈ $420-540 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Grand Canal views from select rooms</li>
+                        <li>5-minute walk to Rialto Bridge</li>
+                        <li>Rooftop terrace with city views</li>
+                        <li>Breakfast included</li>
+                        <li>Historical palazzo building</li>
+                        <li>AC, WiFi, helpful staff</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Why we love it:</strong> Great location near Rialto without the crazy price tag of canal-front hotels. The rooftop terrace is perfect for morning coffee. Book a canal-view room for the Venice experience without breaking the bank.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Book on Booking.com →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=400&fit=crop" alt="Hotel Al Ponte Mocenigo">
+                <div class="hotel-info">
+                    <h3>Hotel Al Ponte Mocenigo</h3>
+                    <p class="restaurant-type">Budget-Friendly • Santa Croce</p>
+                    <p class="price">€120-160/night</p>
+                    <p class="price-note">≈ $360-480 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Charming boutique hotel in quiet neighborhood</li>
+                        <li>10-minute walk to Rialto</li>
+                        <li>Garden courtyard</li>
+                        <li>Breakfast included</li>
+                        <li>Family-run with personal service</li>
+                        <li>Excellent value for money</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Budget-conscious choice:</strong> You don't need Grand Canal views to love Venice. This hotel is in a authentic neighborhood, away from tourist crowds, but still walkable to everything. Save money here and spend it on gondola rides and amazing food.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">See Prices →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do Section -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">🗺️ Things to Do in Venice</h2>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🛶 Gondola Ride</h4>
+                        <p>The most iconic Venetian experience. Glide through hidden canals while your gondolier serenades you. Skip the touristy Grand Canal routes and ask for the quieter backwater canals for more intimate views.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €80-100 for 30 min (up to 6 people)<br>
+                            <strong>Best Time:</strong> Late afternoon or sunset<br>
+                            <strong>Book:</strong> Direct with gondoliers at small stations<br>
+                            <strong>Pro Tip:</strong> Share with another couple to split cost
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ St. Mark's Basilica</h4>
+                        <p>Byzantine masterpiece covered in golden mosaics. Over 8,000 sq meters of gold leaf create an otherworldly interior. The Pala d'Oro altarpiece alone is worth the visit - it's encrusted with 2,000 gems.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free entry, €3-5 for special areas<br>
+                            <strong>Hours:</strong> 9:30 AM - 5:15 PM (closed Sundays AM)<br>
+                            <strong>Book:</strong> Reserve skip-the-line tickets online<br>
+                            <strong>Dress Code:</strong> Shoulders + knees covered<br>
+                            <strong>Link:</strong> <a href="https://www.basilicasanmarco.it" target="_blank">basilicasanmarco.it</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🏰 Doge's Palace</h4>
+                        <p>Former seat of Venetian power with opulent rooms, prison cells, and the famous Bridge of Sighs. The Secret Itineraries tour takes you into hidden chambers where the Council of Ten made life-or-death decisions.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €25-30 standard, €70 Secret Itineraries<br>
+                            <strong>Hours:</strong> 9 AM - 6 PM<br>
+                            <strong>Book:</strong> 2-3 months ahead for Secret Itineraries<br>
+                            <strong>Duration:</strong> 2-3 hours<br>
+                            <strong>Link:</strong> <a href="https://palazzoducale.visitmuve.it" target="_blank">palazzoducale.visitmuve.it</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌈 Murano & Burano Islands</h4>
+                        <p><strong>Murano:</strong> World-famous glass-making island. Watch master artisans blow glass in centuries-old furnaces. <strong>Burano:</strong> Rainbow-colored fishing village with lace-making tradition. Instagram heaven.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Vaporetto day pass €25 or guided tour €30-50<br>
+                            <strong>Duration:</strong> Half day (4-5 hours)<br>
+                            <strong>Best Time:</strong> Morning (less crowded)<br>
+                            <strong>Getting There:</strong> Vaporetto lines 12 & 14<br>
+                            <strong>Pro Tip:</strong> Have lunch in Burano at Trattoria al Gatto Nero
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌉 Rialto Bridge & Market</h4>
+                        <p>The oldest and most famous bridge spanning the Grand Canal. Nearby Rialto Market has been Venice's food hub since 1097. Browse fresh fish, produce, and sample local snacks.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free<br>
+                            <strong>Market Hours:</strong> 7 AM - 2 PM (closed Sundays)<br>
+                            <strong>Best Time:</strong> Early morning for market<br>
+                            <strong>What to Buy:</strong> Fresh produce, spices, souvenirs<br>
+                            <strong>Nearby:</strong> Cicchetti bars for snack crawl
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🍷 Cicchetti Food Tour</h4>
+                        <p>Venice's version of tapas - small bites paired with wine. Hop between traditional bacari (wine bars) sampling crostini, fried seafood, and local wines. This IS the way to eat in Venice.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €25-40 per person for self-guided crawl<br>
+                            <strong>Best Time:</strong> Early evening (6-8 PM)<br>
+                            <strong>Areas:</strong> Cannaregio, Castello, San Polo<br>
+                            <strong>Try:</strong> Cantina Do Spade, All'Arco, Osteria Al Squero<br>
+                            <strong>Pro Tip:</strong> €2-3 per cicchetti, €3-4 per wine glass
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎭 Teatro La Fenice</h4>
+                        <p>One of Europe's most prestigious opera houses. Even if you don't catch a performance, the guided tour of this phoenix-like theater (burned down twice, rebuilt each time) is stunning.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €10 tour, €50-200+ for performances<br>
+                            <strong>Tours:</strong> Daily 9:30 AM - 6 PM<br>
+                            <strong>Performance Schedule:</strong> Check website<br>
+                            <strong>Book:</strong> <a href="https://www.teatrolafenice.it" target="_blank">teatrolafenice.it</a><br>
+                            <strong>Dress Code:</strong> Smart casual for performances
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎨 Accademia Gallery</h4>
+                        <p>The ultimate collection of Venetian art from 14th-18th centuries. Works by Titian, Tintoretto, Veronese, and Bellini. Less crowded than the Doge's Palace but equally impressive.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €15<br>
+                            <strong>Hours:</strong> 8:15 AM - 7:15 PM (Mon 8:15 AM - 2 PM)<br>
+                            <strong>Duration:</strong> 1.5-2 hours<br>
+                            <strong>Book:</strong> <a href="https://www.gallerieaccademia.it" target="_blank">gallerieaccademia.it</a><br>
+                            <strong>Best Time:</strong> Early morning or late afternoon
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🌅 Sunset at Giudecca</h4>
+                        <p>Escape the crowds on this quieter island. The Fondamenta delle Zitelle waterfront offers the best sunset views of Venice. Grab an Aperol Spritz and watch the city turn golden.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free (just vaporetto fare)<br>
+                            <strong>Getting There:</strong> Vaporetto line 2 or 4.1<br>
+                            <strong>Best Time:</strong> 1 hour before sunset<br>
+                            <strong>Bring:</strong> Camera!<br>
+                            <strong>Nearby:</strong> Skyline Rooftop Bar at Hilton Molino Stucky
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🍝 Where to Eat in Venice</h2>
+            
+            <div class="restaurant-card">
+                <h4>Osteria alle Testiere</h4>
+                <p class="restaurant-type">Seafood • Castello</p>
+                <p>Tiny restaurant (only 9 tables) serving the absolute best seafood in Venice. Their spaghetti alle vongole and grilled scallops are legendary. You MUST book weeks ahead.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Try Dishes:</strong> Spaghetti alle vongole veraci (€18), Grilled scallops (€22), Raw fish tasting (€25)<br>
+                    <strong>Price Range:</strong> €€€ (€40-60 per person with wine)<br>
+                    <strong>Booking:</strong> Email or call weeks in advance - tiny place!<br>
+                    <strong>Phone:</strong> +39 041 522 7220
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Antiche Carampane</h4>
+                <p class="restaurant-type">Traditional Venetian • San Polo</p>
+                <p>Hidden gem tucked in narrow alleyways near Rialto. Family-run for generations, serving authentic Venetian classics. Their frittura mista (mixed fried seafood) is perfection.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Try:</strong> Sarde in saor (€14), Spaghetti al nero di seppia (€18), Frittura mista (€22)<br>
+                    <strong>Price Range:</strong> €€ (€35-50 per person)<br>
+                    <strong>Booking:</strong> Call ahead for dinner<br>
+                    <strong>Tip:</strong> No sign outside - look for the small doorway!
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Trattoria da Romano (Burano)</h4>
+                <p class="restaurant-type">Seafood • Burano Island</p>
+                <p>Worth the vaporetto ride to Burano just for lunch here. Family recipes since 1920s. Their risotto di gò (lagoon fish risotto) is a Venetian treasure.</p>
+                <div class="menu-highlights">
+                    <strong>Specialties:</strong> Risotto di gò (€25), Fritto misto (€28), Bussolai cookies for dessert (€5)<br>
+                    <strong>Price Range:</strong> €€€ (€45-65 per person)<br>
+                    <strong>Location:</strong> Via San Martino Sinistra 221, Burano<br>
+                    <strong>Open:</strong> Lunch only, closed Mondays
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>All'Arco</h4>
+                <p class="restaurant-type">Cicchetti Bar • Rialto</p>
+                <p>Standing-room-only cicchetti bar near Rialto Market. Everything is made fresh that morning from market ingredients. Arrive early - they sell out by 2 PM!</p>
+                <div class="menu-highlights">
+                    <strong>Best Cicchetti:</strong> Baccalà mantecato (€2.50), Panino con porchetta (€4), Fresh crostini (€2-3 each)<br>
+                    <strong>Price Range:</strong> € (€15-20 per person for full snacking)<br>
+                    <strong>Hours:</strong> 8 AM - 2:30 PM, closed Sundays<br>
+                    <strong>Tip:</strong> Pair with a glass of local wine (€3-4)
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Osteria Al Squero</h4>
+                <p class="restaurant-type">Wine Bar • Dorsoduro</p>
+                <p>Quintessential Venetian experience - grab cicchetti and wine, then sit on the canal edge watching gondolas being repaired at the squero (gondola workshop) across the water.</p>
+                <div class="menu-highlights">
+                    <strong>Perfect For:</strong> Aperitivo hour (5-7 PM)<br>
+                    <strong>Cicchetti:</strong> €2-4 each, Prosecco €4, Spritz €6<br>
+                    <strong>Location:</strong> Fondamenta Nani 943, Dorsoduro<br>
+                    <strong>Vibe:</strong> Casual standing/sitting outside
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gelato: Gelatoteca Suso</h4>
+                <p class="restaurant-type">Artisan Gelato • Cannaregio</p>
+                <p>Forget every gelato you've ever had. Suso makes small batches daily with creative flavors. Try the gianduja (Nutella-like) or pistachio - both life-changing.</p>
+                <div class="menu-highlights">
+                    <strong>Best Flavors:</strong> Gianduja, Sicilian pistachio, Salted caramel<br>
+                    <strong>Price:</strong> €3-5 depending on size<br>
+                    <strong>Location:</strong> Santa Croce 1105<br>
+                    <strong>Pro Tip:</strong> Get a cone - they make them in-house!
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Tips -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: var(--venice-color); margin-bottom: 30px;">💡 Venice Insider Tips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: var(--venice-color);">🚤 Getting Around</h4>
+                    <ul style="line-height: 2;">
+                        <li>Buy a 3-day vaporetto pass (€45) instead of single rides (€9.50 each)</li>
+                        <li>Water buses (#1, #2, #12, #14) are your friends</li>
+                        <li>Walking is often faster than vaporetto in the city center</li>
+                        <li>Download Venice offline maps - GPS works, cell data doesn't always</li>
+                        <li>Getting lost is part of the fun - embrace it!</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--venice-color);">💰 Money-Saving Tips</h4>
+                    <ul style="line-height: 2;">
+                        <li>Eat standing at bars (cheaper than sitting)</li>
+                        <li>Drink tap water - it's safe and free</li>
+                        <li>Avoid restaurants near St. Mark's Square (tourist traps)</li>
+                        <li>Buy museum passes if visiting 3+ museums</li>
+                        <li>Picnic supplies from Rialto Market = budget-friendly lunch</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--venice-color);">⚠️ What to Avoid</h4>
+                    <ul style="line-height: 2;">
+                        <li>Don't swim in the canals (it's illegal and gross)</li>
+                        <li>Don't feed pigeons in St. Mark's (€500 fine!)</li>
+                        <li>Avoid unlicensed gondoliers (official ones wear striped shirts)</li>
+                        <li>Don't eat in restaurants with photo menus</li>
+                        <li>Skip the overpriced cafés in St. Mark's Square (€15 coffee!)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--venice-color);">📸 Photo Spots</h4>
+                    <ul style="line-height: 2;">
+                        <li>Sunrise at Rialto Bridge (empty streets!)</li>
+                        <li>Burano's colorful houses (every corner is perfect)</li>
+                        <li>Sunset from Giudecca waterfront</li>
+                        <li>Bridge of Sighs from Ponte della Paglia</li>
+                        <li>Hidden canals in Castello neighborhood</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample 3-Day Itinerary -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">📅 Sample 3-Day Venice Itinerary</h2>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h4>Day 1: Grand Arrival</h4>
+                    <p><strong>Morning:</strong> Arrive, check into hotel, walk to St. Mark's Square</p>
+                    <p><strong>Afternoon:</strong> St. Mark's Basilica + Doge's Palace combo ticket</p>
+                    <p><strong>Evening:</strong> Aperitivo at Osteria Al Squero, dinner at Antiche Carampane</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Take it slow today - you just flew overnight! Let Venice enchant you at a relaxed pace.</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 2: Island Hopping</h4>
+                    <p><strong>Morning:</strong> Early vaporetto to Murano (glass demonstration)</p>
+                    <p><strong>Midday:</strong> Burano for rainbow houses + lunch at Trattoria da Romano</p>
+                    <p><strong>Afternoon:</strong> Return to Venice, cicchetti crawl near Rialto</p>
+                    <p><strong>Evening:</strong> Gondola ride through quiet canals at sunset</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 3: Hidden Venice</h4>
+                    <p><strong>Morning:</strong> Accademia Gallery, explore Dorsoduro neighborhood</p>
+                    <p><strong>Afternoon:</strong> Get lost in Castello (seriously - no map!)</p>
+                    <p><strong>Evening:</strong> Sunset at Giudecca, farewell dinner at Osteria alle Testiere</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>This is your day to wander aimlessly. The best Venice moments happen when you're lost.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🗺️ Venice Map</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89552.38466313392!2d12.270246!3d45.438759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb1daf1d63d89%3A0x7ba3c6f0bd92102f!2sVenice%2C%20Italy!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Next Destination -->
+        <section class="cta-section">
+            <h2>Next Stop: Milan 🚄</h2>
+            <p>Ready to leave the canals for fashion and culture? The Frecciarossa high-speed train gets you to Milan in just 2.5 hours.</p>
+            <div class="cta-buttons">
+                <a href="trains.html" class="btn-large">View Train Options →</a>
+                <a href="milan.html" class="btn-large">Preview Milan →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Venice awaits!</p>
+        </div>
+    </footer>
+</body>
+</html>
