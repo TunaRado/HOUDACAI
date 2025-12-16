@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houdacai - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: brightness(0) invert(1) drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3));
+        }
+
+        .coming-soon {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .dots {
+            font-size: 2.5rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                max-width: 750px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="HOUDACAI.svg" alt="Houdacai Logo" class="logo">
+        <div style="margin-top: 2rem;">
+            <a href="mindrive.html" style="color: #ffffff; text-decoration: none; padding: 0.8rem 2rem; border: 2px solid #ffffff; border-radius: 50px; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.color='#000000';" onmouseout="this.style.background='transparent'; this.style.color='#ffffff';">
+                Check out Mindrive
+            </a>
+        </div>        <div style="margin-top: 1.5rem;">            <a href="italy2026/login.html" style="color: #ffffff; text-decoration: none; padding: 0.8rem 2rem; border: 2px solid #ffffff; border-radius: 50px; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.color='#000000';" onmouseout="this.style.background='transparent'; this.style.color='#ffffff';">                FishSaber            </a>        </div>
+        <h1 class="coming-soon" style="margin-top: 5rem;">More "things" coming soon<span class="dots">...</span></h1>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Houdacai. All rights reserved.</p>
+    </div>
+</body>
+</html>

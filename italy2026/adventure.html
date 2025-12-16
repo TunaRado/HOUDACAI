@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishSaber - Choose Your Adventure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .trip-card {
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .trip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .trip-card:hover::before {
+            background: linear-gradient(135deg, rgba(102,126,234,0.8) 0%, rgba(118,75,162,0.8) 100%);
+        }
+
+        .trip-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .trip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .trip-card.coming-soon {
+            opacity: 0.85;
+            cursor: not-allowed;
+        }
+
+        .trip-card.coming-soon:hover {
+            transform: translateY(-5px);
+        }
+
+        #trip1 {
+            background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80');
+        }
+
+        #trip2 {
+            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80');
+        }
+
+        #trip3 {
+            background-image: url('https://images.unsplash.com/photo-1534113414509-0c439599fdb4?w=800&q=80');
+        }
+
+        #trip4 {
+            background-image: url('https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&q=80');
+        }
+
+        .trip-icon {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .trip-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .trip-duration {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .trip-route {
+            text-align: center;
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .trip-description {
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            text-shadow: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .badge.available {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .badge.coming-soon {
+            background: #FFC107;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .trips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trip-card {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Choose Your Italian Adventure</h1>
+        <p class="subtitle">Select your dream 2-week journey through Italy</p>
+
+        <div class="trips-grid">
+            <!-- Trip 1: Venice to Rome (AVAILABLE) -->
+            <a href="index.html" class="trip-card available" id="trip1">
+                <div>
+                    <div class="trip-icon"></div>
+                    <div class="trip-title">Classic Italy</div>
+                    <div class="trip-duration">14 Nights / 15 Days</div>
+                    <div class="trip-route">Venice  Milan  Florence  Rome</div>
+                    <p class="trip-description">
+                        The ultimate Italian tour hitting all the major cities. Art, history, food, and romance.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <span class="badge available"> View Itinerary</span>
+                </div>
+            </a>
+
+            <!-- Trip 2: Zurich to Rome (COMING SOON) -->
+            <div class="trip-card coming-soon" id="trip2">
+                <div>
+                    <div class="trip-icon"></div>
+                    <div class="trip-title">Alpine to Ancient</div>
+                    <div class="trip-duration">14 Nights / 15 Days</div>
+                    <div class="trip-route">Zurich  Milan  Florence  Rome</div>
+                    <p class="trip-description">
+                        Start in Swiss mountains, descend through Italian lakes to Roman history.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <span class="badge coming-soon"> Coming Soon</span>
+                </div>
+            </div>
+
+            <!-- Trip 3: Venice to Naples (COMING SOON) -->
+            <div class="trip-card coming-soon" id="trip3">
+                <div>
+                    <div class="trip-icon"></div>
+                    <div class="trip-title">Coastal Paradise</div>
+                    <div class="trip-duration">14 Nights / 15 Days</div>
+                    <div class="trip-route">Venice  Florence  Rome  Naples</div>
+                    <p class="trip-description">
+                        From Venetian canals to the Amalfi Coast. Pizza, Pompeii, and paradise.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <span class="badge coming-soon"> Coming Soon</span>
+                </div>
+            </div>
+
+            <!-- Trip 4: Roads Less Traveled (COMING SOON) -->
+            <div class="trip-card coming-soon" id="trip4">
+                <div>
+                    <div class="trip-icon"></div>
+                    <div class="trip-title">Hidden Italy</div>
+                    <div class="trip-duration">14 Nights / 15 Days</div>
+                    <div class="trip-route">Venice  Bologna  Siena  Orvieto</div>
+                    <p class="trip-description">
+                        Skip the crowds. Discover medieval towns, countryside vineyards, authentic Italy.
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <span class="badge coming-soon"> Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
