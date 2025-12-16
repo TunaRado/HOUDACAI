@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan - Fashion & Culture Capital | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .milan-header {
+            background: linear-gradient(135deg, var(--milan-color) 0%, #c0392b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-info {
+            padding: 25px;
+        }
+        
+        .hotel-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--milan-color);
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--milan-color);
+            margin: 10px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .hotel-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .hotel-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .hotel-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--milan-color);
+            font-weight: 700;
+        }
+        
+        .activity-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--milan-color);
+        }
+        
+        .activity-card h4 {
+            color: var(--milan-color);
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .activity-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .activity-details {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .activity-details strong {
+            color: var(--milan-color);
+        }
+        
+        .restaurant-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--milan-color);
+        }
+        
+        .restaurant-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--milan-color);
+        }
+        
+        .restaurant-type {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .menu-highlights {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="milan-header">
+        <div class="container">
+            <h1>👗 Milan - La Moda</h1>
+            <p class="tagline">Fashion & Culture Capital | 3 Nights, June 23-25, 2026</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Image -->
+        <section style="margin: 40px 0;">
+            <img src="https://images.unsplash.com/photo-1513581166391-887a96ddeafd?w=1200&h=500&fit=crop" 
+                 alt="Milan Duomo Cathedral" 
+                 style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        </section>
+
+        <!-- Quick Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 40px;">
+            <h2 style="color: var(--milan-color);">Why Milan?</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                Milan is Italy's engine - a cosmopolitan powerhouse where Renaissance masterpieces meet cutting-edge fashion, where Leonardo da Vinci's genius lives in both art and architecture. This is not the slow, romantic Italy of postcards; this is fast-paced, stylish, and fiercely modern while still cherishing its incredible history. From the Gothic spires of the Duomo to the chic cafés of Brera, Milan surprises at every turn.
+            </p>
+        </section>
+
+        <!-- Hotels Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🏨 Where to Stay in Milan</h2>
+            
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=400&fit=crop" alt="Room Mate Giulia">
+                <div class="hotel-info">
+                    <h3>⭐ Room Mate Giulia - OUR TOP PICK</h3>
+                    <p class="restaurant-type">Boutique Hotel • 2 min walk to Duomo</p>
+                    <p class="price">€160-220/night</p>
+                    <p class="price-note">≈ $480-660 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Literally steps from the Duomo (120 meters!)</li>
+                        <li>Ultra-modern design with rooftop terrace</li>
+                        <li>Aperitivo bar on-site</li>
+                        <li>Walking distance to everything</li>
+                        <li>Trendy boutique vibe with personality</li>
+                        <li>AC, WiFi, gym, breakfast included</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Why we love it:</strong> You can't beat this location - wake up, walk out the door, and you're staring at the Duomo. The rooftop terrace is perfect for evening drinks. Modern without being sterile, stylish without being pretentious. Perfect Milan base.
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">Book on Booking.com →</a>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?w=800&h=400&fit=crop" alt="Hotel Berna">
+                <div class="hotel-info">
+                    <h3>Hotel Berna</h3>
+                    <p class="restaurant-type">Mid-Range • Near Centrale Station</p>
+                    <p class="price">€100-140/night</p>
+                    <p class="price-note">≈ $300-420 total for 3 nights</p>
+                    
+                    <ul class="hotel-features">
+                        <li>5-minute walk from Milano Centrale station</li>
+                        <li>Perfect for arriving/departing by train</li>
+                        <li>Comfortable, clean, reliable</li>
+                        <li>Metro access to city center (10 min ride)</li>
+                        <li>Breakfast included</li>
+                        <li>Great value for money</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px; color: #555;">
+                        <strong>Budget-conscious choice:</strong> Not in the absolute center, but convenient for train connections and still well-connected by metro. Save money on accommodation and spend it on Last Supper tickets and aperitivo!
+                    </p>
+                    
+                    <a href="https://www.booking.com" target="_blank" class="btn" style="margin-top: 20px;">See Prices →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do Section -->
+        <section class="activity-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">🗺️ Things to Do in Milan</h2>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🎨 The Last Supper</h4>
+                        <p>Leonardo da Vinci's masterpiece. Seeing it in person is breathtaking - the expressions, the composition, the drama. Only 30 people allowed in at a time for 15 minutes. This is the single hardest ticket to get in Italy. BOOK 3 MONTHS AHEAD!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €15 + €2 booking fee<br>
+                            <strong>Hours:</strong> Tue-Sun 8:15 AM - 7 PM<br>
+                            <strong>Book:</strong> EXACTLY 3 months before your visit date<br>
+                            <strong>Location:</strong> Santa Maria delle Grazie church<br>
+                            <strong>Link:</strong> <a href="https://cenacolovinciano.org" target="_blank">cenacolovinciano.org</a><br>
+                            <strong>Critical:</strong> Tickets sell out in MINUTES when released!
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>⛪ Duomo di Milano</h4>
+                        <p>Gothic masterpiece with 3,400+ statues. The rooftop terrace walk among the spires is unforgettable - you're eye-level with the Madonnina golden statue. On clear days, you can see the Alps. Worth every step!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €30 combo (cathedral + terraces + museum)<br>
+                            <strong>Hours:</strong> 9 AM - 7 PM daily<br>
+                            <strong>Book:</strong> Skip-the-line tickets online recommended<br>
+                            <strong>Duration:</strong> 2-3 hours<br>
+                            <strong>Pro Tip:</strong> Take stairs instead of elevator (saves €5, better views)<br>
+                            <strong>Link:</strong> <a href="https://www.duomomilano.it" target="_blank">duomomilano.it</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🏰 Sforza Castle</h4>
+                        <p>Massive Renaissance fortress housing multiple museums. Michelangelo's final sculpture (Pietà Rondanini) alone is worth the visit. The castle grounds are free to explore and beautiful for strolling.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free to enter grounds, €10 for museums<br>
+                            <strong>Hours:</strong> 7 AM - 7:30 PM (grounds), 9 AM - 5:30 PM (museums)<br>
+                            <strong>Museums:</strong> Ancient Art, Musical Instruments, Furniture, Egyptian<br>
+                            <strong>Behind Castle:</strong> Sempione Park for picnics<br>
+                            <strong>Duration:</strong> 1.5-2 hours for museums
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🛍️ Galleria Vittorio Emanuele II</h4>
+                        <p>The world's oldest shopping mall, but calling it a "mall" is an insult - this is an architectural masterpiece. Glass dome, mosaic floors, designer shops. Even if you don't shop, the building itself is stunning. Stand on the bull mosaic and spin 3 times for good luck!</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free (window shopping or serious shopping!)<br>
+                            <strong>Location:</strong> Connects Duomo to La Scala opera house<br>
+                            <strong>Shops:</strong> Prada, Louis Vuitton, Gucci flagship stores<br>
+                            <strong>Cafés:</strong> Historic Caffè Biffi or splurge at Marchesi 1824<br>
+                            <strong>Tradition:</strong> Spin on the Torino bull mosaic for luck!
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎭 Teatro alla Scala</h4>
+                        <p>The most prestigious opera house in the world. Even if you don't catch a performance, the museum tour showcases costumes, set designs, and lets you peek into the gilded theater from a side box.</p>
+                        <div class="activity-details">
+                            <strong>Museum:</strong> €12, daily 9 AM - 5:30 PM<br>
+                            <strong>Performances:</strong> Check schedule (€50-300+)<br>
+                            <strong>Book:</strong> <a href="https://www.teatroallascala.org" target="_blank">teatroallascala.org</a><br>
+                            <strong>Dress Code:</strong> Smart casual for performances<br>
+                            <strong>Pro Tip:</strong> Last-minute tickets sometimes available day-of
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🎨 Pinacoteca di Brera</h4>
+                        <p>Milan's answer to Florence's Uffizi. Incredible art collection including Raphael's "Marriage of the Virgin" and Mantegna's "Dead Christ." The Brera neighborhood itself is bohemian and charming.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €15<br>
+                            <strong>Hours:</strong> Tue-Sun 9:30 AM - 6:30 PM<br>
+                            <strong>Duration:</strong> 2 hours<br>
+                            <strong>Link:</strong> <a href="https://pinacotecabrera.org" target="_blank">pinacotecabrera.org</a><br>
+                            <strong>After:</strong> Wander Brera streets for cafés and boutiques
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🍸 Navigli Aperitivo Crawl</h4>
+                        <p>Milan's canal district comes alive at aperitivo hour (6-9 PM). Pay for a drink, get FREE buffet. This is THE Milanese tradition - hopping between bars along the canals, eating, drinking, people-watching.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> €8-12 per drink (includes free food buffet!)<br>
+                            <strong>Best Time:</strong> 6-9 PM, especially weekdays<br>
+                            <strong>Areas:</strong> Naviglio Grande, Naviglio Pavese<br>
+                            <strong>Popular Bars:</strong> Mag Café, Rita & Cocktails, Ugo<br>
+                            <strong>Pro Tip:</strong> This is dinner + drinks for €10-15 total!
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>🏔️ Lake Como Day Trip</h4>
+                        <p>George Clooney's neighborhood! Take the train to Como (1 hour), then ferry between picturesque villages. Bellagio is the jewel, but Varenna is less crowded and equally stunning. Worth the day trip if weather is nice.</p>
+                        <div class="activity-details">
+                            <strong>Train:</strong> Milano Centrale → Como San Giovanni (€5-10, 1 hour)<br>
+                            <strong>Ferry Pass:</strong> €15-20 for day pass<br>
+                            <strong>Villages:</strong> Como town, Bellagio, Varenna, Menaggio<br>
+                            <strong>Lunch:</strong> Waterfront restaurants in Bellagio or Varenna<br>
+                            <strong>Duration:</strong> Full day (leave 9 AM, return 7 PM)
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <h4>👔 Fashion District Stroll</h4>
+                        <p>Via Montenapoleone and the Quadrilatero della Moda - where fashion dreams (and budgets) go to die. Window shop the biggest names in fashion, even if you're not buying. People-watching here is world-class.</p>
+                        <div class="activity-details">
+                            <strong>Cost:</strong> Free (window shopping) to $$$$$ (actual shopping!)<br>
+                            <strong>Streets:</strong> Via Montenapoleone, Via della Spiga, Via Sant'Andrea<br>
+                            <strong>Brands:</strong> Armani, Versace, Prada, Dolce & Gabbana, Hermès<br>
+                            <strong>Budget Option:</strong> Shop at Rinascente department store instead<br>
+                            <strong>Best Time:</strong> Morning for less crowds
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurants Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🍝 Where to Eat in Milan</h2>
+            
+            <div class="restaurant-card">
+                <h4>Trattoria Milanese</h4>
+                <p class="restaurant-type">Traditional Milanese • Centro Storico</p>
+                <p>Family-run since 1933, serving authentic Milanese classics. Their risotto alla milanese (saffron risotto) and ossobuco are textbook perfect. Zero pretension, maximum flavor.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Try:</strong> Risotto alla milanese (€18), Ossobuco with polenta (€26), Cotoletta alla milanese (€24)<br>
+                    <strong>Price Range:</strong> €€ (€35-50 per person)<br>
+                    <strong>Booking:</strong> Call ahead for dinner<br>
+                    <strong>Location:</strong> Via Santa Marta 11<br>
+                    <strong>Closed:</strong> Tuesdays and August
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Luini Panzerotti</h4>
+                <p class="restaurant-type">Street Food Legend • Near Duomo</p>
+                <p>Milan's most famous street food - fried stuffed pastries. There's ALWAYS a line out the door because they're that good. Grab a couple, find a bench, enjoy. The classic tomato-mozzarella is perfection.</p>
+                <div class="menu-highlights">
+                    <strong>Specialties:</strong> Classic panzerotto (€4), Spinach & mozzarella (€4.50), Nutella (€4)<br>
+                    <strong>Price Range:</strong> € (€4-8 for filling lunch)<br>
+                    <strong>Location:</strong> Via Santa Radegonda 16 (off Duomo square)<br>
+                    <strong>Hours:</strong> Mon-Sat 10 AM - 3 PM<br>
+                    <strong>Tip:</strong> Order at counter, eat while walking!
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Pescheria da Claudio</h4>
+                <p class="restaurant-type">Seafood • Navigli</p>
+                <p>Raw bar and seafood paradise. Order fresh oysters, crudo, or their famous spaghetti alle vongole while sitting canalside. Perfect spot before aperitivo crawl.</p>
+                <div class="menu-highlights">
+                    <strong>Best Dishes:</strong> Raw seafood platter (€28), Spaghetti alle vongole (€16), Fresh oysters (€3 each)<br>
+                    <strong>Price Range:</strong> €€ (€30-45 per person)<br>
+                    <strong>Location:</strong> Alzaia Naviglio Grande<br>
+                    <strong>Vibe:</strong> Casual, lively, outdoor seating<br>
+                    <strong>Pro Tip:</strong> Come for late lunch before aperitivo hour
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Ratanà</h4>
+                <p class="restaurant-type">Modern Milanese • Navigli</p>
+                <p>Contemporary take on Milanese cuisine using seasonal ingredients. Beautiful industrial-chic space. Their tasting menu showcases the best of modern Italian cooking.</p>
+                <div class="menu-highlights">
+                    <strong>Highlights:</strong> Risotto variations (€18-22), Seasonal tasting menu (€65-85), Veal dishes (€24-28)<br>
+                    <strong>Price Range:</strong> €€€ (€50-75 per person with wine)<br>
+                    <strong>Booking:</strong> Reserve in advance, especially weekends<br>
+                    <strong>Link:</strong> <a href="https://www.ratana.it" target="_blank">ratana.it</a><br>
+                    <strong>Dress:</strong> Smart casual
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Pizzeria Spontini</h4>
+                <p class="restaurant-type">Pizza • Multiple Locations</p>
+                <p>Milan's most famous pizza - thick, square slices with tons of cheese. This is NOT Neapolitan pizza - this is Milan's unique style and it's addictive. Cheap, filling, delicious.</p>
+                <div class="menu-highlights">
+                    <strong>Order:</strong> Classic margherita pizza slice (€5-7)<br>
+                    <strong>Price Range:</strong> € (€5-12 for full meal)<br>
+                    <strong>Locations:</strong> Multiple throughout city<br>
+                    <strong>Vibe:</strong> Fast-casual, standing or takeaway<br>
+                    <strong>Perfect For:</strong> Quick lunch or late-night munchies
+                </div>
+            </div>
+
+            <div class="restaurant-card">
+                <h4>Gelato: Cioccolati Italiani</h4>
+                <p class="restaurant-type">Gelato & Desserts • Duomo Area</p>
+                <p>Not just gelato - their Italian hot chocolate is so thick you eat it with a spoon. The gelato selection is creative and high-quality. Perfect post-Duomo treat.</p>
+                <div class="menu-highlights">
+                    <strong>Must-Try:</strong> Italian hot chocolate (€5), Pistachio gelato (€3.50), Seasonal flavors<br>
+                    <strong>Location:</strong> Multiple locations (one near Duomo)<br>
+                    <strong>Price:</strong> €3-6 depending on size<br>
+                    <strong>Also:</strong> Waffles, crepes, pastries
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Tips -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: var(--milan-color); margin-bottom: 30px;">💡 Milan Insider Tips</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h4 style="color: var(--milan-color);">🚇 Getting Around</h4>
+                    <ul style="line-height: 2;">
+                        <li>Buy 3-day metro pass (€12) - best value</li>
+                        <li>Metro is fast, clean, efficient (unlike Rome!)</li>
+                        <li>City center is very walkable</li>
+                        <li>Trams are scenic but slower than metro</li>
+                        <li>Download ATM Milano app for transit</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--milan-color);">💰 Money-Saving Tips</h4>
+                    <ul style="line-height: 2;">
+                        <li>Aperitivo = dinner + drinks for €10-12!</li>
+                        <li>Many museums free first Sunday of month</li>
+                        <li>Eat standing at bars (cheaper than sitting)</li>
+                        <li>Skip fancy cafés in Galleria (overpriced)</li>
+                        <li>Take stairs at Duomo (saves €5 vs elevator)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--milan-color);">⚠️ What to Avoid</h4>
+                    <ul style="line-height: 2;">
+                        <li>Duomo square bracelet scammers (just say NO)</li>
+                        <li>Don't feed pigeons (illegal, €500 fine)</li>
+                        <li>Avoid restaurants with English-only menus</li>
+                        <li>Skip overpriced Galleria cafés</li>
+                        <li>Don't attempt to drive (nightmare traffic + ZTL zones)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--milan-color);">📸 Photo Spots</h4>
+                    <ul style="line-height: 2;">
+                        <li>Duomo rooftop terraces at sunset</li>
+                        <li>Galleria's glass dome (from center floor)</li>
+                        <li>Sforza Castle from Sempione Park</li>
+                        <li>Navigli canals at dusk</li>
+                        <li>Via Mercanti medieval street</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample 3-Day Itinerary -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">📅 Sample 3-Day Milan Itinerary</h2>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h4>Day 1: Milan Icons</h4>
+                    <p><strong>Morning:</strong> Arrive from Venice, check in, climb Duomo rooftop</p>
+                    <p><strong>Afternoon:</strong> Last Supper viewing (if you got tickets!), Sforza Castle</p>
+                    <p><strong>Evening:</strong> Stroll Galleria, dinner at Trattoria Milanese</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Hit the big sights first! Milan is more compact than you think - you can see a lot in one day.</em></p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 2: Art & Aperitivo</h4>
+                    <p><strong>Morning:</strong> Pinacoteca di Brera, wander Brera neighborhood</p>
+                    <p><strong>Afternoon:</strong> Fashion district window shopping, La Scala museum</p>
+                    <p><strong>Evening:</strong> Navigli aperitivo crawl (make it a full bar hop!)</p>
+                </div>
+                
+                <div class="activity-card">
+                    <h4>Day 3: Lake Como Escape</h4>
+                    <p><strong>Full Day:</strong> Train to Como, ferry to Bellagio & Varenna, lakeside lunch</p>
+                    <p><strong>Alternative:</strong> Stay in city - shop, relax in Sempione Park, final gelato</p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><em>Weather-dependent! If sunny, Lake Como is magical. If rainy, explore more of Milan.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🗺️ Milan Map</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89542.48026871554!2d9.140395!3d45.464211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c1493f1275e7%3A0x3cffcd13c6740e8d!2sMilan%2C%20Italy!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Next Destination -->
+        <section class="cta-section">
+            <h2>Next Stop: Florence 🚄</h2>
+            <p>Ready to trade fashion for Renaissance art? The train from Milan to Florence takes just under 2 hours through beautiful Tuscan countryside.</p>
+            <div class="cta-buttons">
+                <a href="trains.html" class="btn-large">View Train Options →</a>
+                <a href="florence.html" class="btn-large">Preview Florence →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Milan awaits!</p>
+        </div>
+    </footer>
+</body>
+</html>

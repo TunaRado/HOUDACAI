@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalfi Coast - Coastal Paradise | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .amalfi-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hotel-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .hotel-info {
+            padding: 25px;
+        }
+        
+        .hotel-info h3 {
+            margin: 0 0 10px 0;
+            color: #3498db;
+        }
+        
+        .price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #3498db;
+            margin: 10px 0;
+        }
+        
+        .price-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .hotel-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .hotel-features li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .hotel-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: 700;
+        }
+        
+        .activity-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #3498db;
+        }
+        
+        .activity-card h4 {
+            color: #3498db;
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .restaurant-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .restaurant-card h4 {
+            color: #3498db;
+            margin: 0 0 10px 0;
+        }
+        
+        .cuisine-tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="amalfi-header">
+        <div class="container">
+            <h1>🌊 Amalfi Coast - Coastal Paradise</h1>
+            <p class="tagline">3 Nights | Days 8-10 | Dramatic Cliffs & Mediterranean Dreams</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- City Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin: 40px 0;">
+            <h2 style="color: #3498db;">Welcome to the Amalfi Coast - Italy's Coastal Masterpiece</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                The Amalfi Coast is one of the world's most spectacular coastlines - dramatic cliffs plunge into turquoise Mediterranean waters, pastel villages cascade down mountainsides, lemon groves perfume the air, and winding coastal roads offer jaw-dropping vistas around every curve. This UNESCO World Heritage site includes the iconic towns of Positano, Amalfi, and Ravello, each with its own unique charm. Prepare for Instagram overload, incredible seafood, and coastal magic.
+            </p>
+        </section>
+
+        <!-- Hotels Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🏨 Where to Stay on the Amalfi Coast</h2>
+            
+            <!-- Hotel Option 1 - Positano -->
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=300&fit=crop" alt="Hotel Positano" />
+                <div class="hotel-info">
+                    <h3>Hotel Poseidon - Positano ⭐⭐⭐⭐</h3>
+                    <p><strong>Location:</strong> Positano (Upper town)</p>
+                    <div class="price">$200-280/night</div>
+                    <p class="price-note">3 nights = ~$600-840 total</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Stunning views of Positano's colorful cascade</li>
+                        <li>Beautiful terrace pool overlooking the sea</li>
+                        <li>Family-run with excellent hospitality</li>
+                        <li>Free shuttle to beach and town center</li>
+                        <li>Lemon grove on property</li>
+                        <li>Amazing breakfast with fresh pastries</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Why Stay Here:</strong> Classic Positano experience with incredible views at a reasonable price for the area.</p>
+                </div>
+            </div>
+
+            <!-- Hotel Option 2 - Amalfi -->
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=300&fit=crop" alt="Hotel Amalfi" />
+                <div class="hotel-info">
+                    <h3>Hotel Santa Caterina - Amalfi ⭐⭐⭐⭐⭐</h3>
+                    <p><strong>Location:</strong> Amalfi (Cliffside)</p>
+                    <div class="price">$350-500/night</div>
+                    <p class="price-note">3 nights = ~$1,050-1,500 total</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Luxury 5-star perched on cliffs</li>
+                        <li>Private beach access via elevator through cliff</li>
+                        <li>Stunning infinity pools with sea views</li>
+                        <li>Michelin-starred restaurant on property</li>
+                        <li>Lemon grove and organic gardens</li>
+                        <li>Impeccable service and amenities</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Why Stay Here:</strong> Ultimate luxury Amalfi Coast experience - worth the splurge for a honeymoon or special trip.</p>
+                </div>
+            </div>
+
+            <!-- Hotel Option 3 - Praiano -->
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=300&fit=crop" alt="Hotel Praiano" />
+                <div class="hotel-info">
+                    <h3>Hotel Onda Verde - Praiano ⭐⭐⭐</h3>
+                    <p><strong>Location:</strong> Praiano (Between Positano & Amalfi)</p>
+                    <div class="price">$140-200/night</div>
+                    <p class="price-note">3 nights = ~$420-600 total</p>
+                    
+                    <ul class="hotel-features">
+                        <li>Best value on the Amalfi Coast!</li>
+                        <li>Beautiful sea-view terraces</li>
+                        <li>Quieter town than Positano/Amalfi</li>
+                        <li>Walking distance to beach</li>
+                        <li>Family-run with local charm</li>
+                        <li>Great breakfast included</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Why Stay Here:</strong> Authentic coastal experience without the crowds and prices of Positano. Central to explore entire coast.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Must-Do Activities -->
+        <div class="activity-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">🗺️ Must-Do Amalfi Coast Experiences</h2>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4>🎨 Positano - La Dolce Vita</h4>
+                        <p><strong>The Crown Jewel</strong></p>
+                        <p>Positano's pastel buildings cascading down to the sea are iconic. Wander the steep pedestrian streets, shop for linen, relax on the beach, and soak in pure beauty.</p>
+                        <p><strong>Time:</strong> Full day or half day</p>
+                        <p><strong>Must Do:</strong> Beach club lunch, shop Chiesa di Santa Maria</p>
+                        <p><strong>Tip:</strong> Best photos from ferry or water</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🥾 Path of the Gods Hike</h4>
+                        <p><strong>Spectacular Coastal Trail</strong></p>
+                        <p>One of the world's most beautiful hikes! The Sentiero degli Dei trail offers breathtaking clifftop views. Agerola to Nocelle is the classic route.</p>
+                        <p><strong>Time:</strong> 3-4 hours (moderate difficulty)</p>
+                        <p><strong>Distance:</strong> 4.5 miles with elevation</p>
+                        <p><strong>Best Time:</strong> Morning (cooler, better light)</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🌸 Ravello - Gardens in the Sky</h4>
+                        <p><strong>Hilltop Paradise</strong></p>
+                        <p>Perched high above the coast, Ravello offers stunning gardens (Villa Cimbrone & Villa Rufolo), classical music venues, and panoramic terraces.</p>
+                        <p><strong>Time:</strong> Half day</p>
+                        <p><strong>Entry:</strong> €7-10 per villa garden</p>
+                        <p><strong>Must See:</strong> Villa Cimbrone's Terrace of Infinity</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>⛵ Boat Tour Along Coast</h4>
+                        <p><strong>See It from the Water</strong></p>
+                        <p>The best views of the coast are from the sea! Take a private or group boat tour, swim in hidden coves, visit grottos, and see Positano from the water.</p>
+                        <p><strong>Time:</strong> 3-8 hours (various options)</p>
+                        <p><strong>Cost:</strong> €80-200 per person</p>
+                        <p><strong>Stops:</strong> Positano, Emerald Grotto, swimming spots</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>🍋 Limoncello Tasting</h4>
+                        <p><strong>Liquid Sunshine</strong></p>
+                        <p>The Amalfi Coast is famous for huge lemons and limoncello. Visit a local producer, taste varieties, and bring bottles home!</p>
+                        <p><strong>Time:</strong> 1 hour</p>
+                        <p><strong>Cost:</strong> Often free with purchase</p>
+                        <p><strong>Best:</strong> Family-run hillside producers</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <h4>⛪ Amalfi Town & Cathedral</h4>
+                        <p><strong>Historic Maritime Republic</strong></p>
+                        <p>The town of Amalfi was once a powerful maritime republic. Visit the stunning Arab-Norman cathedral and explore the charming piazza.</p>
+                        <p><strong>Time:</strong> 2-3 hours</p>
+                        <p><strong>Must See:</strong> Cathedral, Cloister of Paradise</p>
+                        <p><strong>Vibe:</strong> More laid-back than Positano</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant Section -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🍽️ Where to Eat on the Amalfi Coast</h2>
+            
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <h4>La Sponda - Positano</h4>
+                    <span class="cuisine-tag">Fine Dining</span>
+                    <p style="margin: 10px 0; color: #666;">Michelin-starred restaurant lit by hundreds of candles. Romantic, elegant, unforgettable. Reserve well in advance!</p>
+                    <p><strong>Must Try:</strong> Tasting menu with local seafood</p>
+                    <p><strong>Price:</strong> €100-150/person</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h4>Da Adolfo - Positano</h4>
+                    <span class="cuisine-tag">Beach Club</span>
+                    <p style="margin: 10px 0; color: #666;">Legendary beach club only accessible by boat. Grilled fish, mozzarella, and cold white wine with your feet in the sand!</p>
+                    <p><strong>Must Try:</strong> Grilled mozzarella, fresh catch</p>
+                    <p><strong>Price:</strong> €30-50/person</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h4>Ristorante Rossellinis - Ravello</h4>
+                    <span class="cuisine-tag">Michelin Star</span>
+                    <p style="margin: 10px 0; color: #666;">2 Michelin stars at Palazzo Avino. Stunning terrace views, creative Italian cuisine, impeccable service.</p>
+                    <p><strong>Must Try:</strong> Degustazione menu</p>
+                    <p><strong>Price:</strong> €120-180/person</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h4>Trattoria da Ciccio Cielo Mare Terra</h4>
+                    <span class="cuisine-tag">Seafood</span>
+                    <p style="margin: 10px 0; color: #666;">Authentic family trattoria in Amalfi. No-frills, fresh seafood, local charm. Where locals eat!</p>
+                    <p><strong>Must Try:</strong> Scialatielli ai frutti di mare</p>
+                    <p><strong>Price:</strong> €25-40/person</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h4>Il Pirata - Praiano</h4>
+                    <span class="cuisine-tag">Beach Club</span>
+                    <p style="margin: 10px 0; color: #666;">Hidden gem beach club with fantastic food. Pasta dishes made with love, stunning cove setting.</p>
+                    <p><strong>Must Try:</strong> Lemon pasta, grilled fish</p>
+                    <p><strong>Price:</strong> €30-45/person</p>
+                </div>
+                
+                <div class="restaurant-card">
+                    <h4>Collina Bakery - Positano</h4>
+                    <span class="cuisine-tag">Bakery</span>
+                    <p style="margin: 10px 0; color: #666;">Best breakfast pastries in Positano! Fresh cornetti, sfogliatelle, and strong espresso.</p>
+                    <p><strong>Must Try:</strong> Warm sfogliatella, cappuccino</p>
+                    <p><strong>Price:</strong> €5-10</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section style="background: #fff3cd; padding: 30px; border-radius: 12px; border-left: 5px solid #ffc107;">
+            <h3 style="color: #856404; margin-bottom: 20px;">💡 Amalfi Coast Insider Tips</h3>
+            <ul style="line-height: 2; color: #555;">
+                <li><strong>Getting Around:</strong> SITA buses connect towns (€2-3), but they're packed in summer. Consider private transfers or ferries for comfort.</li>
+                <li><strong>Ferry is King:</strong> Ferries between towns are scenic, relaxing, and avoid the crazy coastal road. Positano-Amalfi €8-10.</li>
+                <li><strong>Base Location:</strong> Stay in one town and day trip to others. Praiano or Positano are central. Amalfi is more affordable.</li>
+                <li><strong>Driving:</strong> The coastal road is stunning but STRESSFUL. Narrow, winding, buses inches away. Only for confident drivers!</li>
+                <li><strong>Steps Everywhere:</strong> Be prepared to climb. Lots of stairs! Wear comfortable shoes. This is not wheelchair accessible.</li>
+                <li><strong>Peak Season Chaos:</strong> June-August is PACKED. Shoulder season (May, Sept, early Oct) is ideal - still warm, fewer crowds.</li>
+                <li><strong>Book Ahead:</strong> Good restaurants and boat tours fill up fast. Book 2-4 weeks ahead in summer.</li>
+                <li><strong>Beach Clubs:</strong> Public beaches are small. Most people go to beach clubs (€15-30 for lounger/umbrella).</li>
+                <li><strong>Dress Code:</strong> Swimsuit cover-ups required when not at beach. Many churches/shops enforce this.</li>
+                <li><strong>Sunset Timing:</strong> Positano faces west = amazing sunsets. Amalfi faces south = sunrise better.</li>
+            </ul>
+        </section>
+
+        <!-- Quick Reference -->
+        <section style="margin: 60px 0;">
+            <h2>📋 Quick Reference</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>🚂 Getting Here</h3>
+                    <p>Naples → Sorrento (train) → Amalfi (ferry/bus)</p>
+                    <p style="font-size: 0.9em; color: #666;">Or private transfer from Naples</p>
+                </div>
+                <div class="overview-card">
+                    <h3>🚌 Getting Around</h3>
+                    <p>SITA Bus + Ferries</p>
+                    <p style="font-size: 0.9em; color: #666;">Ferries are more relaxing!</p>
+                </div>
+                <div class="overview-card">
+                    <h3>💰 Budget</h3>
+                    <p>€150-250/day per person</p>
+                    <p style="font-size: 0.9em; color: #666;">Most expensive region of trip</p>
+                </div>
+                <div class="overview-card">
+                    <h3>🌤️ Weather</h3>
+                    <p>Sunny & Warm</p>
+                    <p style="font-size: 0.9em; color: #666;">Summer: 75-85°F (24-29°C)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day Links -->
+        <section style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); padding: 40px; border-radius: 12px; text-align: center; color: white;">
+            <h2 style="color: white; border: none; margin-bottom: 20px;">Explore the Amalfi Coast Day by Day</h2>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="day08.html" style="background: white; color: #3498db; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600;">Day 8: Arrival</a>
+                <a href="day09.html" style="background: white; color: #3498db; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600;">Day 9: Positano & Boat</a>
+                <a href="day10.html" style="background: white; color: #3498db; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600;">Day 10: Ravello & Path of Gods</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Italy Adventure | Amalfi Coast - Days 8-10</p>
+        </div>
+    </footer>
+</body>
+</html>

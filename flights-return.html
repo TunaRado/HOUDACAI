@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Flights - Rome to Tampa | Italy 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .flights-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .flight-option-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .airline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .airline-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+        
+        .price-estimate {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #27ae60;
+        }
+        
+        .flight-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .tips-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="flights-header">
+        <div class="container">
+            <h1>✈️ Return Flights</h1>
+            <p class="tagline">Rome (FCO) → Tampa (TPA) | Day 16</p>
+            <p style="margin-top: 15px;"><a href="index.html" style="color: white; text-decoration: underline;">← Back to Overview</a></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Overview -->
+        <section style="background: white; padding: 30px; border-radius: 12px; margin: 40px 0;">
+            <h2 style="color: #e74c3c;">Saying Goodbye to Italy</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                All good things must end! Your return flight from Rome's Fiumicino Airport (FCO) will likely have one connection in the US or Europe. The journey takes 12-16 hours total. Look for Friday afternoon/evening departures that get you home Friday night or Saturday morning, giving you the weekend to recover from jet lag before work.
+            </p>
+        </section>
+
+        <!-- Flight Options -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">🛫 Flight Options from Rome</h2>
+            
+            <!-- Option 1: Delta -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸 Delta (via Atlanta)</div>
+                    <div class="price-estimate">$420-580 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>FCO → ATL:</strong> Afternoon departure ~2-4 PM (10-11 hours)</li>
+                        <li><strong>Arrive Atlanta:</strong> Evening same day (time difference)</li>
+                        <li><strong>Layover:</strong> 2-4 hours</li>
+                        <li><strong>ATL → TPA:</strong> Late evening (1.5 hours)</li>
+                        <li><strong>Arrive Tampa:</strong> Late Friday night</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Direct transatlantic, Atlanta hub is easy, familiar US airline<br>
+                    <strong>Cons:</strong> Long day of travel<br>
+                    <strong>Book At:</strong> <a href="https://www.delta.com" target="_blank">delta.com</a> or Google Flights
+                </p>
+            </div>
+
+            <!-- Option 2: United -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸 United (via Newark)</div>
+                    <div class="price-estimate">$450-620 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>FCO → EWR:</strong> Morning/midday departure (9-10 hours)</li>
+                        <li><strong>Arrive Newark:</strong> Afternoon same day</li>
+                        <li><strong>Layover:</strong> 2-5 hours</li>
+                        <li><strong>EWR → TPA:</strong> Evening flight (3 hours)</li>
+                        <li><strong>Arrive Tampa:</strong> Late Friday night</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Competitive pricing, direct transatlantic from Rome<br>
+                    <strong>Cons:</strong> Newark layovers can be long<br>
+                    <strong>Book At:</strong> <a href="https://www.united.com" target="_blank">united.com</a> or Google Flights
+                </p>
+            </div>
+
+            <!-- Option 3: American -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇺🇸 American (via Philadelphia or Charlotte)</div>
+                    <div class="price-estimate">$480-650 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>FCO → PHL/CLT:</strong> Afternoon departure (9-10 hours)</li>
+                        <li><strong>Arrive Philadelphia/Charlotte:</strong> Evening same day</li>
+                        <li><strong>Layover:</strong> 2-4 hours</li>
+                        <li><strong>PHL/CLT → TPA:</strong> Evening/night flight (2-2.5 hours)</li>
+                        <li><strong>Arrive Tampa:</strong> Late Friday night or early Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Multiple options, good service, alliance benefits<br>
+                    <strong>Cons:</strong> Sometimes requires early morning departure from Rome<br>
+                    <strong>Book At:</strong> <a href="https://www.aa.com" target="_blank">aa.com</a> or Google Flights
+                </p>
+            </div>
+
+            <!-- Option 4: ITA Airways -->
+            <div class="flight-option-card">
+                <div class="airline-header">
+                    <div class="airline-name">🇮🇹 ITA Airways (Non-stop to select US cities)</div>
+                    <div class="price-estimate">$520-700 pp</div>
+                </div>
+                
+                <div class="flight-details">
+                    <p><strong>Typical Route:</strong></p>
+                    <ul style="line-height: 2; margin-top: 10px;">
+                        <li><strong>FCO → JFK/MIA:</strong> Afternoon departure (9-10 hours)</li>
+                        <li><strong>Layover:</strong> 2-4 hours in New York or Miami</li>
+                        <li><strong>JFK/MIA → TPA:</strong> Evening connection</li>
+                        <li><strong>Arrive Tampa:</strong> Late Friday/early Saturday</li>
+                    </ul>
+                </div>
+                
+                <p style="margin-top: 20px; color: #555;">
+                    <strong>Pros:</strong> Italian hospitality till the end, good food/wine on board!<br>
+                    <strong>Cons:</strong> Can be pricier, connection adds time<br>
+                    <strong>Book At:</strong> <a href="https://www.ita-airways.com" target="_blank">ita-airways.com</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Booking Tips -->
+        <section style="background: white; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: #e74c3c; margin-bottom: 30px;">💰 Return Flight Booking Strategy</h2>
+            
+            <div class="tips-box">
+                <h3 style="margin: 0 0 15px 0;">⚠️ IMPORTANT: Book Round-Trip vs One-Way</h3>
+                <p style="line-height: 1.8;">
+                    <strong>Round-trip tickets are almost always cheaper than booking two one-ways!</strong> When you search for outbound flights, look at the total round-trip price. You'll typically save $100-300 per person by booking both directions together.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div>
+                    <h3 style="color: #e74c3c;">Timing Tips</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Afternoon departures from Rome work best</li>
+                        <li>Avoid 6 AM departures (you'll hate yourself)</li>
+                        <li>Landing late Friday gives you the weekend</li>
+                        <li>Or consider Saturday morning arrival for rest</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #e74c3c;">Money Savers</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Book round-trip with outbound flight</li>
+                        <li>Be flexible with Friday vs Saturday return</li>
+                        <li>Consider nearby airports for connections</li>
+                        <li>Join airline loyalty programs before booking</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #e74c3c;">Don't Forget</h3>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Allow 3 hours at Rome airport</li>
+                        <li>Check baggage allowances</li>
+                        <li>Save room for souvenirs!</li>
+                        <li>Download movies for the flight home</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Last Day in Rome -->
+        <section style="margin: 60px 0;">
+            <h2 style="text-align: center; margin-bottom: 40px;">📅 Your Last Day in Rome</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #e74c3c;">
+                    <h4 style="color: #e74c3c;">Morning</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Check out of hotel (store luggage if needed)</li>
+                        <li>Final espresso at favorite café</li>
+                        <li>Last gelato (yes, at 10 AM!)</li>
+                        <li>Quick revisit to favorite spot</li>
+                        <li>Buy last-minute souvenirs</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #e74c3c;">
+                    <h4 style="color: #e74c3c;">Getting to Airport</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li><strong>Leonardo Express:</strong> €14, 32 min from Termini</li>
+                        <li><strong>Taxi/Uber:</strong> €50-60 fixed rate, 45 min-1 hour</li>
+                        <li><strong>Private Transfer:</strong> €60-80 booked in advance</li>
+                        <li>Arrive 3 hours before international flight</li>
+                        <li>FCO is a big airport - allow time!</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 25px; border-radius: 12px; border-top: 4px solid #e74c3c;">
+                    <h4 style="color: #e74c3c;">At the Airport</h4>
+                    <ul style="line-height: 2; margin-top: 15px;">
+                        <li>Check bags, get boarding passes</li>
+                        <li>Tax refund desk if you made big purchases</li>
+                        <li>Security and passport control</li>
+                        <li>Browse duty-free for last-minute gifts</li>
+                        <li>One final Italian meal at airport!</li>
+                        <li>Board flight with a full heart ❤️</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packing for Return -->
+        <section style="background: #f8f9fa; padding: 40px; border-radius: 12px; margin: 60px 0;">
+            <h2 style="color: #e74c3c; margin-bottom: 30px;">🧳 Packing for the Return Flight</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div>
+                    <h4 style="color: #e74c3c;">Souvenirs to Pack</h4>
+                    <ul style="line-height: 2;">
+                        <li>Wine/limoncello (wrap in clothes!)</li>
+                        <li>Olive oil and balsamic vinegar</li>
+                        <li>Parmesan, truffle products</li>
+                        <li>Italian coffee and chocolates</li>
+                        <li>Leather goods from Florence</li>
+                        <li>Save room in luggage or bring extra bag!</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #e74c3c;">Customs Allowances</h4>
+                    <ul style="line-height: 2;">
+                        <li>$800 duty-free per person</li>
+                        <li>1 liter of alcohol duty-free</li>
+                        <li>200 cigarettes duty-free</li>
+                        <li>Declare food items (most allowed)</li>
+                        <li>Keep receipts for expensive items</li>
+                        <li>No fresh meats/unpasteurized cheese</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #e74c3c;">Flight Home Tips</h4>
+                    <ul style="line-height: 2;">
+                        <li>Wear comfortable clothes (you'll be sitting 12+ hours)</li>
+                        <li>Download Italian movies for nostalgia</li>
+                        <li>Start adjusting back to Tampa time</li>
+                        <li>Stay hydrated on the flight</li>
+                        <li>Sleep if you can (helps with jet lag)</li>
+                        <li>Dream about when you'll return!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Book Your Return Flight</h2>
+            <p>Don't forget - round-trip tickets save money! Book both flights together.</p>
+            <div class="cta-buttons">
+                <a href="https://www.google.com/flights" target="_blank" class="btn-large">Search Flights →</a>
+                <a href="flights-outbound.html" class="btn-large">View Outbound Flights →</a>
+                <a href="index.html" class="btn-large">Back to Overview →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Our Italian Adventure | Arrivederci... for now!</p>
+        </div>
+    </footer>
+</body>
+</html>
