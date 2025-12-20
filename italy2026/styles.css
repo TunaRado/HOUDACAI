@@ -27,6 +27,11 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: var(--light-bg);
+    background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1920&q=50&blur=200');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
 }
 
 .container {
@@ -458,10 +463,40 @@ footer {
     box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
+.destination-card a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-card a::after {
+    content: '🔗 View Photo Source';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.destination-card a:hover::after {
+    opacity: 1;
+}
+
 .destination-card img {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination-card a:hover img {
+    transform: scale(1.05);
 }
 
 .destination-content {
@@ -680,47 +715,68 @@ footer {
     line-height: 1.5;
 }
 
-/* CTA Section */
+/* CTA Section - Fixed Bottom Bar */
 .cta-section {
-    padding: 80px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 20px;
     text-align: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    z-index: 1000;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .cta-section h2 {
-    font-size: 2.5em;
-    margin: 0 0 20px 0;
+    font-size: 1.1em;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .cta-section p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
+    font-size: 0.9em;
+    margin: 0;
     opacity: 0.95;
+    flex-grow: 1;
+    display: none;
 }
 
 .cta-buttons {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .btn-large {
     display: inline-block;
     background: white;
     color: #667eea;
-    padding: 16px 40px;
-    border-radius: 8px;
+    padding: 8px 20px;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1em;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
 }
 
 .btn-large:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add bottom padding to main to prevent content hiding under fixed bar */
+main {
+    padding: 2rem 0 80px 0;
 }
 
 /* Footer */
@@ -728,7 +784,7 @@ footer {
     background: #1a1a1a;
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 20px 100px 20px;
 }
 
 footer p {
@@ -750,13 +806,24 @@ footer em {
         grid-template-columns: 1fr;
     }
     
+    .cta-section {
+        padding: 8px 12px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
     .cta-section h2 {
-        font-size: 1.8em;
+        font-size: 0.95em;
     }
     
     .btn-large {
-        padding: 14px 30px;
-        font-size: 1em;
+        padding: 6px 16px;
+        font-size: 0.85em;
+    }
+    
+    .cta-buttons {
+        gap: 8px;
+        width: 100%;
     }
 }
 /* ===== ADVENTURE SELECTION PAGE STYLES ===== */
@@ -1287,6 +1354,323 @@ footer em {
     margin: 0.6rem 0;
 }
 
+/* Travel Guide Styles */
+.guide-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.guide-section h2 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.guide-section h3 {
+    color: #764ba2;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.guide-section h4 {
+    color: #667eea;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.overview-card {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.overview-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tip-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #764ba2;
+}
+
+.tip-card h4 {
+    margin-top: 0;
+    color: #764ba2;
+}
+
+.phrase-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+}
+
+.phrase-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.phrase-table th,
+.phrase-table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.phrase-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.phrase-table tbody tr:hover {
+    background: #e9ecef;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.tips-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.do-section,
+.dont-section {
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.do-section {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+.dont-section {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+.do-section h3 {
+    color: #28a745;
+    margin-top: 0;
+}
+
+.dont-section h3 {
+    color: #dc3545;
+    margin-top: 0;
+}
+
+.do-section ul,
+.dont-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.do-section li,
+.dont-section li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.food-tips h3 {
+    color: #764ba2;
+    margin-top: 2rem;
+}
+
+.food-tips ul,
+.food-tips ol {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.food-tips li {
+    margin: 0.8rem 0;
+}
+
+.scam-alerts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.alert-card {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.alert-card h4 {
+    color: #856404;
+    margin-top: 0;
+}
+
+.tech-tips ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tips li {
+    margin: 0.8rem 0;
+}
+
+.packing-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.packing-category {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.packing-category h3 {
+    color: #667eea;
+    margin-top: 0;
+}
+
+.packing-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.packing-category li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.packing-category li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.museum-tips ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.museum-tips li {
+    margin: 0.8rem 0;
+}
+
+.pro-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.pro-tip {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #28a745;
+}
+
+.pro-tip h4 {
+    color: #28a745;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.back-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateX(-5px);
+}
+
+.hero-section .hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+}
+
+.btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(102,126,234,0.4);
+}
+
 /* Mobile Responsive for New Styles */
 @media (max-width: 768px) {
     .adventure-card img {
@@ -1326,5 +1710,17 @@ footer em {
     .comparison-table th,
     .comparison-table td {
         padding: 0.6rem;
+    }
+    
+    .do-dont-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .guide-section {
+        padding: 1.5rem;
+    }
+    
+    .guide-section h2 {
+        font-size: 1.6rem;
     }
 }
