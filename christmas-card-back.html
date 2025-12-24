@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Card for Jessica - Back</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Georgia', serif;
+        }
+        
+        .card {
+            width: 8.5in;
+            height: 5.5in;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .print-note {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .back-content {
+            text-align: center;
+            color: white;
+            padding: 60px;
+        }
+        
+        .back-greeting {
+            font-size: 3.5em;
+            color: #ffd700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+        
+        .back-message {
+            font-size: 2em;
+            line-height: 1.8;
+            margin: 25px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        
+        .back-website {
+            font-size: 2.5em;
+            color: #ffd700;
+            font-weight: bold;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        
+        .back-instructions {
+            font-size: 1.8em;
+            color: #e0e0e0;
+            margin: 20px 0;
+        }
+        
+        .back-good-luck {
+            font-size: 2.2em;
+            color: #ff6b6b;
+            margin: 30px 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        
+        .back-note {
+            font-size: 1.4em;
+            color: #b8b8b8;
+            margin-top: 30px;
+            font-style: italic;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="card">
+            <div class="back-content">
+                <div class="back-greeting">🎄 Merry Christmas Jessica! 🎄</div>
+                
+                <div class="back-message">Go to</div>
+                <div class="back-website">Houdacai.com</div>
+                <div class="back-instructions">and click <strong style="color: #ffd700;">FishSaber!</strong></div>
+                
+                <div class="back-good-luck">Good Luck! 🎁</div>
+                
+                <div class="back-note">Desktop PC recommended</div>
+            </div>
+            
+            <!-- Decorative sparkles -->
+            <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="sparkle" style="top: 20%; left: 85%; animation-delay: 0.5s;"></div>
+            <div class="sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
+            <div class="sparkle" style="top: 60%; left: 90%; animation-delay: 1.5s;"></div>
+            <div class="sparkle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
+            <div class="sparkle" style="top: 85%; left: 80%; animation-delay: 2.5s;"></div>
+        </div>
+        
+        <p class="print-note no-print">Press Ctrl+P to print the BACK side • Flip paper to print on reverse • Landscape orientation</p>
+    </div>
+</body>
+</html>
