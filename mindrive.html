@@ -406,8 +406,7 @@
         <div class="apk-section">
             <p style="margin-bottom: 0.5rem; font-size: 0.85rem; opacity: 0.8;">Or skip Google:</p>
             <p>Prefer a direct download? Get the APK and install it yourself (no Google account needed).</p>
-            <button type="button" id="apkLockedBtn" class="apk-download-btn apk-locked visible" aria-label="Download APK (password required)">Download APK</button>
-            <a href="Mindrive APK/app-prod-release.apk" id="apkDownloadLink" class="apk-download-btn apk-unlocked" download style="display: none;">Download APK</a>
+            <button type="button" id="apkLockedBtn" class="apk-download-btn" aria-label="Download APK (password required)">Download APK</button>
             <details class="install-steps">
                 <summary>How to install the APK on Android</summary>
                 <ol>
@@ -505,38 +504,62 @@
 
         (function() {
             var apkLockedBtn = document.getElementById('apkLockedBtn');
-            var apkDownloadLink = document.getElementById('apkDownloadLink');
             var apkModal = document.getElementById('apkModal');
 
-            if (sessionStorage.getItem('mindrive_apk_unlocked') === '1') {
-                apkLockedBtn.style.display = 'none';
-                apkDownloadLink.style.display = 'inline-block';
-            } else {
-                apkLockedBtn.addEventListener('click', function() {
-                    apkModal.classList.add('active');
-                    document.getElementById('apkPasswordInput').focus();
-                });
-            }
+            apkLockedBtn.addEventListener('click', function() {
+                apkModal.classList.add('active');
+                document.getElementById('apkPasswordInput').focus();
+            });
 
-            window.checkApkPassword = function(event) {
+            window.checkApkPassword = async function(event) {
                 event.preventDefault();
                 var input = document.getElementById('apkPasswordInput');
                 var err = document.getElementById('apkModalError');
+                var submitBtn = document.querySelector('.btn-submit');
 
-                // Simple confirmation step only – password is not stored in code
                 if (!input.value) {
                     err.classList.add('show');
-                    err.textContent = 'Please enter the password I gave you.';
+                    err.textContent = 'Please enter the password.';
                     input.focus();
                     return false;
                 }
 
-                sessionStorage.setItem('mindrive_apk_unlocked', '1');
-                closeApkModal();
-                apkLockedBtn.style.display = 'none';
-                apkDownloadLink.style.display = 'inline-block';
+                submitBtn.textContent = 'Downloading...';
+                submitBtn.disabled = true;
                 err.classList.remove('show');
-                input.value = '';
+
+                try {
+                    var response = await fetch('/api/apk-download', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ password: input.value })
+                    });
+
+                    if (response.ok) {
+                        var blob = await response.blob();
+                        var url = window.URL.createObjectURL(blob);
+                        var a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'Mindrive.apk';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                        closeApkModal();
+                        input.value = '';
+                    } else {
+                        err.classList.add('show');
+                        err.textContent = 'Incorrect password.';
+                        input.value = '';
+                        input.focus();
+                    }
+                } catch (e) {
+                    err.classList.add('show');
+                    err.textContent = 'Something went wrong. Please try again.';
+                }
+
+                submitBtn.textContent = 'Unlock';
+                submitBtn.disabled = false;
                 return false;
             };
 
