@@ -61,6 +61,168 @@
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
         }
 
+        .apk-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: center;
+        }
+
+        .apk-section p {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .apk-download-btn {
+            display: inline-block;
+            color: #ffffff;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 1.75rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .apk-download-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+        }
+
+        .install-steps {
+            text-align: left;
+            max-width: 480px;
+            margin: 0 auto 0.5rem;
+            padding: 1rem 1.25rem;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .install-steps summary {
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .install-steps ol {
+            margin: 0.5rem 0 0 1.25rem;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .apk-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apk-modal.active {
+            display: flex;
+        }
+
+        .apk-modal-content {
+            background: rgba(30, 30, 30, 0.98);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 360px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .apk-modal-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .apk-modal-content input[type="password"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .apk-modal-content input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .apk-modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .apk-modal-actions button {
+            flex: 1;
+            padding: 0.65rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+
+        .apk-modal-actions button:hover {
+            opacity: 0.9;
+        }
+
+        .apk-modal-actions .btn-submit {
+            background: #fff;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .apk-modal-actions .btn-cancel {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .apk-modal-error {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .apk-modal-error.show {
+            display: block;
+        }
+
+        .apk-unlocked {
+            display: none;
+        }
+
+        .apk-unlocked.visible {
+            display: inline-block;
+        }
+
+        .apk-locked.visible {
+            display: inline-block;
+        }
+
+        .apk-locked.hidden {
+            display: none;
+        }
+
         .content-wrapper {
             max-width: 900px;
             margin: 0 auto;
@@ -240,6 +402,21 @@
         <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
             Currently in beta - Click above to become a tester and download from Google Play
         </p>
+
+        <div class="apk-section">
+            <p>Prefer a direct download? Get the APK and install it yourself (no Google account needed).</p>
+            <button type="button" id="apkLockedBtn" class="apk-download-btn apk-locked visible" aria-label="Download APK (password required)">Download APK</button>
+            <a href="Mindrive APK/app-prod-release.apk" id="apkDownloadLink" class="apk-download-btn apk-unlocked" download style="display: none;">Download APK</a>
+            <details class="install-steps">
+                <summary>How to install the APK on Android</summary>
+                <ol>
+                    <li>Download the APK above on your Android phone (or transfer the file from your computer).</li>
+                    <li>Open the APK file. If Android blocks it, go to <strong>Settings → Security</strong> (or <strong>Apps → Special app access → Install unknown apps</strong> on Android 8+), then allow your browser or Files app to install unknown apps.</li>
+                    <li>Tap <strong>Install</strong> when prompted. You may need to confirm “Install anyway” if you see a security warning (this is normal for apps outside the Play Store).</li>
+                    <li>Open Mindrive from your app drawer when installation finishes.</li>
+                </ol>
+            </details>
+        </div>
     </div>
 
     <div class="content-wrapper">
@@ -279,6 +456,21 @@
         </div>
     </div>
 
+    <!-- APK password modal -->
+    <div id="apkModal" class="apk-modal" role="dialog" aria-labelledby="apkModalTitle">
+        <div class="apk-modal-content" onclick="event.stopPropagation()">
+            <h3 id="apkModalTitle">Enter password to download APK</h3>
+            <form id="apkPasswordForm" onsubmit="return checkApkPassword(event)">
+                <input type="password" id="apkPasswordInput" placeholder="Password" autocomplete="off" required>
+                <p id="apkModalError" class="apk-modal-error">Incorrect password.</p>
+                <div class="apk-modal-actions">
+                    <button type="submit" class="btn-submit">Unlock</button>
+                    <button type="button" class="btn-cancel" onclick="closeApkModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
@@ -290,10 +482,13 @@
     </div>
 
     <div class="footer">
-        <p>&copy; 2025 Houdacai. All rights reserved.</p>
+        <p>&copy; 2026 Houdacai. All rights reserved.</p>
     </div>
 
     <script>
+        // APK download password – change this to your chosen password
+        var APK_PASSWORD = 'REDACTED';
+
         function openLightbox(src) {
             document.getElementById('lightbox').classList.add('active');
             document.getElementById('lightbox-img').src = src;
@@ -303,12 +498,57 @@
             document.getElementById('lightbox').classList.remove('active');
         }
 
-        // Close lightbox on Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeLightbox();
+                closeApkModal();
             }
         });
+
+        (function() {
+            var apkLockedBtn = document.getElementById('apkLockedBtn');
+            var apkDownloadLink = document.getElementById('apkDownloadLink');
+            var apkModal = document.getElementById('apkModal');
+
+            if (sessionStorage.getItem('mindrive_apk_unlocked') === '1') {
+                apkLockedBtn.style.display = 'none';
+                apkDownloadLink.style.display = 'inline-block';
+            } else {
+                apkLockedBtn.addEventListener('click', function() {
+                    apkModal.classList.add('active');
+                    document.getElementById('apkPasswordInput').focus();
+                });
+            }
+
+            window.checkApkPassword = function(event) {
+                event.preventDefault();
+                var input = document.getElementById('apkPasswordInput');
+                var err = document.getElementById('apkModalError');
+                if (input.value === APK_PASSWORD) {
+                    sessionStorage.setItem('mindrive_apk_unlocked', '1');
+                    closeApkModal();
+                    apkLockedBtn.style.display = 'none';
+                    apkDownloadLink.style.display = 'inline-block';
+                    err.classList.remove('show');
+                    input.value = '';
+                } else {
+                    err.classList.add('show');
+                    input.value = '';
+                    input.focus();
+                }
+                return false;
+            };
+
+            window.closeApkModal = function() {
+                apkModal.classList.remove('active');
+                document.getElementById('apkModalError').classList.remove('show');
+                document.getElementById('apkPasswordInput').value = '';
+            };
+
+            apkModal.addEventListener('click', function(e) {
+                if (e.target === apkModal) closeApkModal();
+            });
+        })();
     </script>
 </body>
 </html>
