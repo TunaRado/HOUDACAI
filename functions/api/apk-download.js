@@ -1,17 +1,23 @@
 export async function onRequestPost(context) {
     const { request, env } = context;
 
-    let body;
-    try {
-        body = await request.json();
-    } catch {
-        return new Response(JSON.stringify({ error: 'Bad request' }), {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' }
-        });
+    // Read raw body once and try to extract password robustly
+    const bodyText = await request.text();
+    let password;
+
+    if (bodyText) {
+        try {
+            const parsed = JSON.parse(bodyText);
+            if (parsed && typeof parsed.password === 'string') {
+                password = parsed.password;
+            }
+        } catch {
+            const params = new URLSearchParams(bodyText);
+            password = params.get('password');
+        }
     }
 
-    if (!body.password || body.password !== env.APK_PASSWORD) {
+    if (!password || password !== env.APK_PASSWORD) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
             status: 401,
             headers: { 'Content-Type': 'application/json' }
