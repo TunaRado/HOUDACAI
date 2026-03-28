@@ -592,7 +592,7 @@
       <p class="hero-sub">Precision Binaural Beats for Focus, Relaxation &amp; Sleep</p>
       <p class="hero-desc">Your brain responds to sound. Mindrive generates precision binaural beats that guide your brainwave state — whether you're trying to lock in, wind down, or drift off. No subscriptions. No nonsense. Just the science.</p>
       <div class="hero-cta">
-        <a href="https://play.google.com/store/apps/details?id=com.houdacai.mindrive" class="btn-primary" target="_blank">Download on Google Play</a>
+        <a href="https://play.google.com/apps/testing/com.houdacai.mindrive" class="btn-primary" target="_blank">Join Beta on Google Play</a>
       </div>
     </div>
   </div>
@@ -670,10 +670,9 @@
       <p class="section-label">Download</p>
       <h2 class="section-title">Get Mindrive</h2>
       <div class="section-divider"></div>
-      <p>Mindrive is live on Google Play. Download free and start your first session in minutes — or grab the APK directly if you prefer to skip the store.</p>
+      <p>Mindrive is currently in closed beta on Android. Join the test team to try it free — full public launch coming soon.</p>
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-        <a href="https://play.google.com/store/apps/details?id=com.houdacai.mindrive" class="btn-primary" target="_blank">Download on Google Play</a>
-        <button type="button" id="apkLockedBtn2" class="btn-secondary">Download APK</button>
+        <a href="https://play.google.com/apps/testing/com.houdacai.mindrive" class="btn-primary" target="_blank">Join Beta on Google Play</a>
       </div>
       <p style="margin-top:1.5rem; font-size:0.8rem; color:rgba(255,255,255,0.3);">
         Questions? <a href="mailto:mindrivesupport@houdacai.com" style="color:rgba(124,110,245,0.7); text-decoration:none;">mindrivesupport@houdacai.com</a>
@@ -695,18 +694,18 @@
         <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Internal Testing</div>
       </div>
-      <div class="status-phase active">
-        <div class="status-dot-wrap"><div class="status-dot">●</div></div>
+      <div class="status-phase done">
+        <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Closed Beta</div>
-        <div class="status-sublabel">↑ In progress</div>
       </div>
-      <div class="status-phase pending">
-        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+      <div class="status-phase done">
+        <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Open Beta</div>
       </div>
-      <div class="status-phase pending">
-        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+      <div class="status-phase active">
+        <div class="status-dot-wrap"><div class="status-dot">●</div></div>
         <div class="status-label">Google Play</div>
+        <div class="status-sublabel">↑ Live now</div>
       </div>
       <div class="status-phase pending">
         <div class="status-dot-wrap"><div class="status-dot"></div></div>
@@ -715,7 +714,7 @@
       </div>
     </div>
     <p style="margin-top:2rem; font-size:0.82rem; color:rgba(255,255,255,0.35); line-height:1.8;">
-      Mindrive is currently in closed beta on Android. Join the test team to try it early — full Google Play launch coming soon.
+      Mindrive is live on Google Play. iOS is targeted for late 2026 — download Android now and help shape what ships on both platforms.
     </p>
   </section>
 
@@ -773,8 +772,7 @@
         document.getElementById('apkPasswordInput').focus();
       }
 
-      document.getElementById('apkLockedBtn').addEventListener('click', openModal);
-      document.getElementById('apkLockedBtn2').addEventListener('click', openModal);
+      
 
       modal.addEventListener('click', function(e) {
         if (e.target === modal) closeApkModal();
