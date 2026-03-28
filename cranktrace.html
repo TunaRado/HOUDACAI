@@ -416,6 +416,7 @@
     <ul class="nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#parameters">Parameters</a></li>
+      <li><a href="#triplog">Trip Log</a></li>
       <li><a href="#notify">Get Notified</a></li>
       <li><span class="nav-badge">Late 2026</span></li>
     </ul>
@@ -496,12 +497,17 @@
         <div class="param-desc">Live fuel pressure monitoring where supported by engine model</div>
       </div>
       <div class="param-card">
-        <div class="param-icon">📊</div>
+        <div class="param-icon">🛰️</div>
         <div class="param-name">GPS Speed Correlation</div>
         <div class="param-desc">Phone GPS speed overlaid with engine data — correlate throttle, RPM, and fuel consumption against actual boat speed</div>
       </div>
       <div class="param-card">
-        <div class="param-icon">📊</div>
+        <div class="param-icon">🗺️</div>
+        <div class="param-name">Trip Log</div>
+        <div class="param-desc">Per-trip distance, engine hours, and fuel consumption automatically recorded — exportable captain's log with GPS track</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">📋</div>
         <div class="param-name">And More</div>
         <div class="param-desc">Full parameter list published at launch — it's more than you'd expect</div>
       </div>
@@ -509,6 +515,36 @@
     <p style="margin-top:1.5rem; font-size:0.8rem; color:rgba(255,255,255,0.3); line-height:1.7;">
       Parameter availability varies by engine model and year. Some values are derived from engine sensor data rather than direct measurement. Full compatibility and parameter list confirmed at launch.
     </p>
+  </section>
+
+  <!-- TRIP LOG -->
+  <section id="triplog">
+    <p class="section-label">Captain's Log</p>
+    <h2 class="section-title">Every Trip. Logged.</h2>
+    <div class="section-divider"></div>
+    <div class="what-grid">
+      <div class="what-body">
+        <p><strong>CrankTrace automatically records a full data log for every trip</strong> — from the moment you start the engine to the moment you shut it down. Distance run, engine hours, estimated fuel burned, average and top speed. Everything you'd write in a paper log, captured automatically in the background.</p>
+        <p>Trip history is stored on-device and exportable. Each entry includes GPS track, runtime, and engine stats — enough to satisfy captain's requirements, insurance documentation, or just your own running record of where you've been and what the boat consumed getting there.</p>
+        <p>Correlating fuel burn against distance and speed over time gives you real efficiency data for your specific boat, load, and conditions. Not EPA estimates. Not manufacturer specs. Your numbers, from your engine, on your water.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem; justify-content:center;">
+        <div style="background:rgba(0,200,160,0.06); border:1px solid rgba(0,200,160,0.15); border-radius:12px; padding:1.5rem;">
+          <div style="font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:0.75rem;">Recorded Per Trip</div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.6rem;">
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">📍 &nbsp;Distance run — nautical or statute miles</li>
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">⏱️ &nbsp;Engine hours on trip</li>
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">⛽ &nbsp;Estimated fuel consumed</li>
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">🚤 &nbsp;Average and top speed (GPS)</li>
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">🛰️ &nbsp;Full GPS track</li>
+            <li style="font-size:0.9rem; color:rgba(232,232,228,0.75);">📋 &nbsp;Date, time, and exportable summary</li>
+          </ul>
+        </div>
+        <div style="background:rgba(0,200,160,0.04); border:1px solid rgba(0,200,160,0.1); border-radius:12px; padding:1.25rem;">
+          <div style="font-size:0.8rem; color:rgba(232,232,228,0.45); line-height:1.7;">Requires phone GPS. Trip logging runs passively — no setup needed beyond pairing CrankTrace to your device.</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- COMPATIBILITY -->
