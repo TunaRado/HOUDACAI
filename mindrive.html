@@ -86,8 +86,8 @@
     .hero {
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      padding: 8rem 3rem 4rem;
+      align-items: flex-start;
+      padding: 10rem 3rem 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -146,7 +146,9 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
+      margin-top: 0.5rem;
     }
 
     .btn-primary {
@@ -563,7 +565,7 @@
       .hero-title { letter-spacing: 4px; }
       .hero-icon { width: 56px; height: 56px; }
       .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-cta { flex-direction: column; align-items: flex-start; }
+      .hero-cta { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -591,9 +593,7 @@
       <p class="hero-desc">Your brain responds to sound. Mindrive generates precision binaural beats that guide your brainwave state — whether you're trying to lock in, wind down, or drift off. No subscriptions. No nonsense. Just the science.</p>
       <div class="hero-cta">
         <a href="https://play.google.com/store/apps/details?id=com.houdacai.mindrive" class="btn-primary" target="_blank">Download on Google Play</a>
-        <button type="button" id="apkLockedBtn" class="btn-secondary">Download APK</button>
       </div>
-      <p class="hero-note">⚠️ Headphones required — binaural beats only work with stereo separation</p>
     </div>
   </div>
 
