@@ -1,102 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Houdacai - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Houdacai — We Build Things</title>
+  <meta name="description" content="Houdacai builds apps, tools, and gear. Based in Florida.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000000;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-        }
+    :root {
+      --white: #ffffff;
+      --off-white: #e8e8e8;
+      --dim: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.1);
+      --card-bg: rgba(255,255,255,0.04);
+      --card-hover: rgba(255,255,255,0.07);
+    }
 
-        .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-            width: 100%;
-        }
+    html { scroll-behavior: smooth; }
 
-        .logo {
-            max-width: 900px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: brightness(0) invert(1) drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3));
-        }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #000;
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-        .coming-soon {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            text-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-        }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .dots {
-            font-size: 2.5rem;
-            animation: pulse 1.5s infinite;
-        }
+    .nav-logo {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-        .footer {
-            position: absolute;
-            bottom: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
+    .nav-links a {
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
 
-        /* FishSaber button hidden – remove this class to show again */
-        .fishsaber-link-hidden {
-            display: none !important;
-        }
+    .nav-links a:hover { color: var(--white); }
 
-        @media (max-width: 768px) {
-            .coming-soon {
-                font-size: 1.8rem;
-            }
-            
-            .logo {
-                max-width: 750px;
-            }
-        }
-    </style>
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('Images/Nebula1.png') center center / cover no-repeat;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .hero-logo {
+      width: min(480px, 85vw);
+      filter: brightness(0) invert(1);
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 200;
+      letter-spacing: 4px;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--dim);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 50px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .hero-cta:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--white);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      opacity: 0.3;
+      animation: bounce 2s infinite;
+      font-size: 1.4rem;
+      color: var(--white);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin-bottom: 3rem;
+    }
+
+    /* ── PRODUCTS ── */
+    #products { border-top: 1px solid var(--border); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .product-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-3px);
+    }
+
+    .product-card.coming-soon {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .product-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .product-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--dim);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .product-name {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      color: var(--white);
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--dim);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-link-label {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .product-card:hover .product-link-label { color: var(--white); }
+
+    .product-link-label .arrow {
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover .arrow { transform: translateX(4px); }
+
+    /* ── ABOUT ── */
+    #about {
+      border-top: 1px solid var(--border);
+    }
+
+    .about-body {
+      max-width: 620px;
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-body p strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item .label {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 1rem;
+      color: var(--white);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .contact-item a:hover { opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    footer img {
+      height: 18px;
+      filter: brightness(0) invert(1);
+      opacity: 0.35;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      section { padding: 4rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="HOUDACAI.svg" alt="Houdacai Logo" class="logo">
-        <div style="margin-top: 2rem;">
-            <a href="mindrive.html" style="color: #ffffff; text-decoration: none; padding: 0.8rem 2rem; border: 2px solid #ffffff; border-radius: 50px; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.color='#000000';" onmouseout="this.style.background='transparent'; this.style.color='#ffffff';">
-                Check out Mindrive
-            </a>
-        </div>
-        <div class="fishsaber-link-hidden" style="margin-top: 1.5rem;">
-            <a href="italy2026/login.html" style="color: #ffffff; text-decoration: none; padding: 0.8rem 2rem; border: 2px solid #ffffff; border-radius: 50px; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.color='#000000';" onmouseout="this.style.background='transparent'; this.style.color='#ffffff';">
-                FishSaber
-            </a>
-        </div>
-        <h1 class="coming-soon" style="margin-top: 5rem;">More "things" coming soon<span class="dots">...</span></h1>
+
+  <!-- NAV -->
+  <nav>
+    <img src="HOUDACAI.svg" alt="Houdacai" class="nav-logo">
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <img src="HOUDACAI.svg" alt="Houdacai" class="hero-logo">
+      <h1 class="hero-tagline">We Build Things</h1>
+      <p class="hero-sub">Apps, tools, and gear — made in Florida by people who give a damn about how things work.</p>
+      <a href="#products" class="hero-cta">See What We Make</a>
     </div>
-    
-    <div class="footer">
-        <p>&copy; 2026 Houdacai. All rights reserved.</p>
+    <div class="scroll-hint">↓</div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <p class="section-label">What We Make</p>
+    <h2 class="section-title">Products</h2>
+    <div class="section-divider"></div>
+
+    <div class="products-grid">
+
+      <!-- MINDRIVE — live -->
+      <a href="mindrive.html" class="product-card">
+        <div class="product-icon">🧠</div>
+        <span class="product-badge">App · Android</span>
+        <div class="product-name">Mindrive</div>
+        <p class="product-desc">Binaural beat generator for focus, relaxation, and sleep. Precision frequency control, cymatics visualization, guided journeys, and a full mixer — engineered for how your brain actually works.</p>
+        <span class="product-link-label">Learn more <span class="arrow">→</span></span>
+      </a>
+
+      <!-- CRANKTRACE — coming soon -->
+      <div class="product-card coming-soon">
+        <div class="product-icon">⚡</div>
+        <span class="product-badge">Hardware · Coming Soon</span>
+        <div class="product-name">CrankTrace</div>
+        <p class="product-desc">Electric gateway device. More details coming.</p>
+        <span class="product-link-label">Coming soon</span>
+      </div>
+
+      <!-- SLOT 3 — placeholder -->
+      <div class="product-card coming-soon">
+        <div class="product-icon">🔧</div>
+        <span class="product-badge">Coming Soon</span>
+        <div class="product-name">More Things</div>
+        <p class="product-desc">We're always building. Check back.</p>
+        <span class="product-link-label">Coming soon</span>
+      </div>
+
     </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">About Houdacai</h2>
+    <div class="section-divider"></div>
+    <div class="about-body">
+      <p>Houdacai is a <strong>Florida-based LLC</strong> that builds software, hardware, and tools for people who want things that actually work the way they're supposed to.</p>
+      <p>We're not a big company. We're builders — we find problems that bother us, figure out the right way to solve them, and ship. Every product we make gets the same level of care whether it's an app on your phone or something you hold in your hands.</p>
+      <p>If something we built is useful to you, that's the whole point.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:admin@houdacai.com">admin@houdacai.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Phone</div>
+        <a href="tel:+17272478897">727-247-8897</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <span>Trinity, FL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <img src="HOUDACAI.svg" alt="Houdacai">
+      <p>&copy; 2026 Houdacai LLC. All rights reserved.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/mindrive/privacy.html">Privacy Policy</a></li>
+      <li><a href="mailto:admin@houdacai.com">Contact</a></li>
+    </ul>
+  </footer>
+
 </body>
 </html>
