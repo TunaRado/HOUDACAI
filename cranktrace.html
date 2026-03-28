@@ -379,6 +379,74 @@
     footer a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
     footer a:hover { color: rgba(255,255,255,0.7); }
 
+    /* ── STATUS TRACK ── */
+    .status-track {
+      display: flex;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      gap: 0;
+    }
+    .status-phase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      min-width: 90px;
+      position: relative;
+    }
+    .status-phase:not(:last-child) .status-dot-wrap::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .status-phase.done   .status-dot-wrap::after { background: var(--accent); }
+    .status-phase.active .status-dot-wrap::after { background: rgba(0,200,160,0.3); }
+    .status-phase.pending .status-dot-wrap::after { background: rgba(255,255,255,0.08); }
+    .status-dot-wrap {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 28px;
+    }
+    .status-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+    .status-phase.done   .status-dot { background: var(--accent); color: #fff; }
+    .status-phase.active .status-dot { background: var(--accent); box-shadow: 0 0 0 4px rgba(0,200,160,0.2), 0 0 12px rgba(0,200,160,0.4); color: #fff; }
+    .status-phase.pending .status-dot { background: transparent; border: 1px solid rgba(255,255,255,0.15); }
+    .status-label {
+      font-size: 0.68rem;
+      text-align: center;
+      margin-top: 0.6rem;
+      line-height: 1.4;
+      padding: 0 0.25rem;
+    }
+    .status-phase.done   .status-label { color: var(--text); }
+    .status-phase.active .status-label { color: var(--accent); font-weight: 600; }
+    .status-phase.pending .status-label { color: rgba(255,255,255,0.3); }
+    .status-sublabel {
+      font-size: 0.6rem;
+      color: var(--accent);
+      margin-top: 0.2rem;
+      text-align: center;
+    }
+
     @media (max-width: 900px) {
       .what-grid { grid-template-columns: 1fr; }
       .diagram-wrap { max-height: 220px; overflow: hidden; }
@@ -417,6 +485,7 @@
       <li><a href="#overview">Overview</a></li>
       <li><a href="#parameters">Parameters</a></li>
       <li><a href="#triplog">Trip Log</a></li>
+      <li><a href="#status">Status</a></li>
       <li><a href="#notify">Get Notified</a></li>
       <li><span class="nav-badge">Late 2026</span></li>
     </ul>
@@ -570,6 +639,40 @@
         <p>Wireless. Works offshore, at the dock, or on the trailer. No internet connection required for core functionality.</p>
       </div>
     </div>
+  </section>
+
+  <!-- RELEASE STATUS -->
+  <section id="status" style="border-top:1px solid rgba(255,255,255,0.06);">
+    <p class="section-label">Release Status</p>
+    <h2 class="section-title">Where We Are</h2>
+    <div class="section-divider"></div>
+    <div class="status-track">
+      <div class="status-phase done">
+        <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
+        <div class="status-label">Concept &amp; Spec</div>
+      </div>
+      <div class="status-phase active">
+        <div class="status-dot-wrap"><div class="status-dot">●</div></div>
+        <div class="status-label">Hardware R&amp;D</div>
+        <div class="status-sublabel">↑ You are here</div>
+      </div>
+      <div class="status-phase pending">
+        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+        <div class="status-label">Prototype</div>
+      </div>
+      <div class="status-phase pending">
+        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+        <div class="status-label">Beta Hardware</div>
+      </div>
+      <div class="status-phase pending">
+        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+        <div class="status-label">Launch</div>
+        <div class="status-sublabel">Late 2026</div>
+      </div>
+    </div>
+    <p style="margin-top:2rem; font-size:0.82rem; color:rgba(255,255,255,0.35); line-height:1.8;">
+      Hardware and firmware are actively in development. Get notified below when beta hardware becomes available — early access will be limited.
+    </p>
   </section>
 
   <!-- NOTIFY -->
