@@ -43,10 +43,16 @@
     }
 
     .nav-logo {
-      height: 28px;
+      height: 44px;
+      width: auto;
+      max-width: 260px;
+      display: block;
       filter: brightness(0) invert(1);
       opacity: 0.9;
+      transition: opacity 0.2s;
     }
+
+    .nav-logo:hover { opacity: 1; }
 
     .nav-links {
       display: flex;
@@ -395,7 +401,7 @@
 
   <!-- NAV -->
   <nav>
-    <img src="HOUDACAI.svg" alt="Houdacai" class="nav-logo">
+    <a href="/"><img src="HOUDACAI.svg" alt="Houdacai" class="nav-logo"></a>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
       <li><a href="#about">About</a></li>
