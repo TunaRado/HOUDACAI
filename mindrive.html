@@ -596,10 +596,6 @@
       <p class="hero-desc">Your brain responds to sound. Mindrive generates precision binaural beats that guide your brainwave state — whether you're trying to lock in, wind down, or drift off. No subscriptions. No nonsense. Just the science.</p>
       <div class="hero-cta">
         <a href="https://play.google.com/store/apps/details?id=com.houdacai.mindrive" class="btn-primary" target="_blank">Get it on Google Play</a>
-        <p style="margin-top:1rem; font-size:0.82rem; color:rgba(255,255,255,0.45);">
-          Want to join the test team? <a href="mailto:mindrivesupport@houdacai.com?subject=Mindrive%20Test%20Team%20Request&body=Hi%2C%0A%0AI%27d%20like%20to%20join%20the%20Mindrive%20test%20team%20on%20Google%20Play.%0A%0AMy%20Gmail%20address%3A%20%5Byour%20gmail%20here%5D%0A%0AThanks!" style="color:rgba(124,110,245,0.8); text-decoration:none;">Email us to request access</a> — we'll add you to the test team.<br>
-          <span style="font-size:0.75rem; color:rgba(255,255,255,0.3);">⚠ Google requires a Gmail address and you must be signed into that Google account on the device you're testing with.</span>
-        </p>
       </div>
     </div>
   </div>
@@ -701,18 +697,14 @@
         <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Internal Testing</div>
       </div>
-      <div class="status-phase active">
-        <div class="status-dot-wrap"><div class="status-dot">●</div></div>
+      <div class="status-phase done">
+        <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Closed Beta</div>
-        <div class="status-sublabel">↑ In progress</div>
       </div>
-      <div class="status-phase pending">
-        <div class="status-dot-wrap"><div class="status-dot"></div></div>
-        <div class="status-label">Open Beta</div>
-      </div>
-      <div class="status-phase pending">
-        <div class="status-dot-wrap"><div class="status-dot"></div></div>
+      <div class="status-phase done">
+        <div class="status-dot-wrap"><div class="status-dot">✓</div></div>
         <div class="status-label">Google Play</div>
+        <div class="status-sublabel">Live ↑</div>
       </div>
       <div class="status-phase pending">
         <div class="status-dot-wrap"><div class="status-dot"></div></div>
@@ -737,21 +729,6 @@
     </ul>
   </footer>
 
-  <!-- APK Modal -->
-  <div id="apkModal" class="apk-modal" role="dialog" aria-labelledby="apkModalTitle">
-    <div class="apk-modal-content" onclick="event.stopPropagation()">
-      <h3 id="apkModalTitle">Enter password to download APK</h3>
-      <form id="apkPasswordForm" onsubmit="return checkApkPassword(event)">
-        <input type="password" id="apkPasswordInput" placeholder="Password" autocomplete="off" required>
-        <p id="apkModalError" class="apk-modal-error">Incorrect password.</p>
-        <div class="apk-modal-actions">
-          <button type="submit" class="btn-submit">Unlock</button>
-          <button type="button" class="btn-cancel" onclick="closeApkModal()">Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close">&times;</span>
@@ -768,81 +745,8 @@
     }
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeLightbox(); closeApkModal(); }
+      if (e.key === 'Escape') { closeLightbox(); }
     });
-
-    (function() {
-      var modal = document.getElementById('apkModal');
-
-      function openModal() {
-        modal.classList.add('active');
-        document.getElementById('apkPasswordInput').focus();
-      }
-
-      
-
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeApkModal();
-      });
-
-      window.checkApkPassword = async function(event) {
-        event.preventDefault();
-        var input = document.getElementById('apkPasswordInput');
-        var err   = document.getElementById('apkModalError');
-        var btn   = document.querySelector('.btn-submit');
-
-        if (!input.value) {
-          err.classList.add('show');
-          err.textContent = 'Please enter the password.';
-          input.focus();
-          return false;
-        }
-
-        btn.textContent = 'Downloading...';
-        btn.disabled = true;
-        err.classList.remove('show');
-
-        try {
-          var response = await fetch('/api/apk-download', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ password: input.value })
-          });
-
-          if (response.ok) {
-            var blob = await response.blob();
-            var url  = window.URL.createObjectURL(blob);
-            var a    = document.createElement('a');
-            a.href = url;
-            a.download = 'Mindrive.apk';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-            closeApkModal();
-            input.value = '';
-          } else {
-            err.classList.add('show');
-            err.textContent = 'Incorrect password.';
-            input.value = '';
-            input.focus();
-          }
-        } catch (e) {
-          err.classList.add('show');
-          err.textContent = 'Something went wrong. Please try again.';
-        }
-
-        btn.textContent = 'Unlock';
-        btn.disabled = false;
-        return false;
-      };
-
-      window.closeApkModal = function() {
-        modal.classList.remove('active');
-        document.getElementById('apkModalError').classList.remove('show');
-        document.getElementById('apkPasswordInput').value = '';
-      };
-    })();
   </script>
 </body>
 </html>
